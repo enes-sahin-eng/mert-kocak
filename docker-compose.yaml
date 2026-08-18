@@ -1,0 +1,50 @@
+services:
+    cn0uhbi5mbx2kp7v2xybxn4q-111840917169:
+        image: 'cn0uhbi5mbx2kp7v2xybxn4q:cb05a6426590fc21fe313932d1d410ff0d6c2bee'
+        container_name: cn0uhbi5mbx2kp7v2xybxn4q-111840917169
+        restart: unless-stopped
+        expose:
+            - '3000'
+        networks:
+            coolify:
+                aliases:
+                    - cn0uhbi5mbx2kp7v2xybxn4q-111840917169
+        mem_limit: '0'
+        memswap_limit: '0'
+        mem_swappiness: 60
+        mem_reservation: '0'
+        cpus: 0.0
+        cpu_shares: 1024
+        env_file:
+            - .env
+        labels:
+            - traefik.enable=true
+            - traefik.http.middlewares.gzip.compress=true
+            - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
+            - traefik.http.routers.http-0-cn0uhbi5mbx2kp7v2xybxn4q.entryPoints=http
+            - traefik.http.routers.http-0-cn0uhbi5mbx2kp7v2xybxn4q.middlewares=gzip
+            - 'traefik.http.routers.http-0-cn0uhbi5mbx2kp7v2xybxn4q.rule=Host(`cn0uhbi5mbx2kp7v2xybxn4q.31.40.198.159.sslip.io`) && PathPrefix(`/`)'
+            - traefik.http.routers.http-0-cn0uhbi5mbx2kp7v2xybxn4q.service=http-0-cn0uhbi5mbx2kp7v2xybxn4q
+            - traefik.http.services.http-0-cn0uhbi5mbx2kp7v2xybxn4q.loadbalancer.server.port=3000
+            - 'caddy_0.encode=zstd gzip'
+            - 'caddy_0.handle_path.0_reverse_proxy={{upstreams 3000}}'
+            - 'caddy_0.handle_path=/*'
+            - caddy_0.header=-Server
+            - 'caddy_0.try_files={path} /index.html /index.php'
+            - 'caddy_0=http://cn0uhbi5mbx2kp7v2xybxn4q.31.40.198.159.sslip.io'
+            - caddy_ingress_network=coolify
+            - coolify.managed=true
+            - coolify.version=4.1.2
+            - coolify.applicationId=2
+            - coolify.type=application
+            - coolify.name=cn0uhbi5mbx2kp7v2xybxn4q
+            - coolify.resourceName=mertkocak-appmain-cn0uhbi5mbx2kp7v2xybxn4q
+            - coolify.projectName=mert-kocak
+            - coolify.serviceName=mertkocak-appmain-cn0uhbi5mbx2kp7v2xybxn4q
+            - coolify.environmentName=production
+            - coolify.pullRequestId=0
+networks:
+    coolify:
+        external: true
+        name: coolify
+        attachable: true
