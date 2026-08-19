@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export default function SmoothScroll({
@@ -9,6 +10,7 @@ export default function SmoothScroll({
   children: React.ReactNode;
 }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -30,6 +32,11 @@ export default function SmoothScroll({
       lenis.destroy();
     };
   }, []);
+
+  // Sayfa (route) değiştiğinde Lenis'in scroll konumunu en tepeye sıfırla.
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+  }, [pathname]);
 
   return <>{children}</>;
 }

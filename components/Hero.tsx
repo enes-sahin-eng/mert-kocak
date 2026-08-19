@@ -219,6 +219,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
           transition={{ duration: 1.5, delay: 1 }}
           style={{ opacity: textOpacity }}
           className="absolute left-8 md:left-16 top-1/4 w-px h-32 bg-gradient-to-b from-accent/50 to-transparent origin-top z-40"
+          suppressHydrationWarning
         />
       </div>
 

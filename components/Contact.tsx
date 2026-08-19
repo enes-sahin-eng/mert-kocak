@@ -83,6 +83,7 @@ const buildContactMethods = (settings: SiteSettings) => [
     label: "Adres",
     value: settings.address,
     href: settings.mapUrl,
+    external: true,
   },
 ];
 
@@ -301,6 +302,8 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                 <motion.a
                   key={method.label}
                   href={method.href}
+                  target={method.external ? "_blank" : undefined}
+                  rel={method.external ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

@@ -2,7 +2,18 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import type { Therapy } from "@/lib/therapies";
+
+// Detaylı sayfası oluşturulmuş terapiler için başlık -> sayfa yolu eşlemesi.
+const therapyDetailLinks: Record<string, string> = {
+  "Bireysel Terapi": "/bireysel-terapi",
+  "Çift Terapisi": "/evlilik-iliski-terapisi",
+  "Anksiyete Terapisi": "/kaygi-bozukluklari",
+  "Depresyon Terapisi": "/depresyon-terapisi",
+  "EMDR Terapi": "/olum-yas-terapisi",
+  "Bilişsel Davranışçı": "/ofke-stres-terapisi",
+};
 
 export default function Therapies({ therapies }: { therapies: Therapy[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -182,6 +193,14 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
                 <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-primary leading-none tracking-tight">
                   {therapies[activeIndex].title}
                 </h2>
+                {therapyDetailLinks[therapies[activeIndex].title] && (
+                  <Link
+                    href={therapyDetailLinks[therapies[activeIndex].title]}
+                    className="mt-4 md:mt-6 inline-block px-7 py-3 bg-white text-primary text-xs md:text-sm font-medium tracking-widest uppercase rounded-full shadow-lg hover:bg-accent hover:text-white transition-colors"
+                  >
+                    Detaylı Bilgi
+                  </Link>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>

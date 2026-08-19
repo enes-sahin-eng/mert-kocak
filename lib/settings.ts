@@ -92,12 +92,12 @@ export interface SiteSettings {
  * Frontend tasarımının orijinal içerikleriyle birebir aynıdır.
  */
 export const defaultSettings: SiteSettings = {
-  phone: "+90 532 XXX XX XX",
-  phoneLink: "+905321234567",
-  whatsapp: "905321234567",
-  email: "info@mertkocak.com",
-  address: "Beşiktaş, İstanbul",
-  mapUrl: "https://maps.google.com",
+  phone: "+90 501 264 84 84",
+  phoneLink: "+905012648484",
+  whatsapp: "905012648484",
+  email: "bilgi@mertkocak.com",
+  address: "Nisbetiye, Ahmet Adnan Saygun Cd. Menekşe 1 Blok No:2 D:3, 34337 Beşiktaş/İstanbul",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=%C4%B0stanbul+Etiler+Psikoloji+Dan%C4%B1%C5%9Fmanl%C4%B1k+Merkezi+Mert+Ko%C3%A7ak+Nisbetiye+Ahmet+Adnan+Saygun+Cd+Menek%C5%9Fe+1+Blok+No%3A2+D%3A3+34337+Be%C5%9Fikta%C5%9F",
   social: {
     instagram: "https://instagram.com",
     linkedin: "https://linkedin.com",
@@ -139,11 +139,12 @@ export const defaultSettings: SiteSettings = {
       tag2: "Çift Terapisi",
     },
     storyEyebrow: "Benim Hikayem",
-    heading: "Zihinsel sağlık yolculuğunuzda güvenilir bir rehber",
+    heading: "Klinik Psikolog Mert Koçak",
     paragraphs: [
-      "İstanbul Üniversitesi Psikoloji bölümünden mezun olduktan sonra, klinik psikoloji alanında uzmanlık eğitimimi tamamladım. On yılı aşkın süredir bireylerin ve çiftlerin ruh sağlığını iyileştirmelerine yardımcı oluyorum.",
-      "Çalışmalarımda bilişsel davranışçı terapi, EMDR ve psikanalitik yaklaşımlar dahil olmak üzere kanıta dayalı yöntemler kullanıyorum. Her danışanın benzersiz olduğuna ve kişiselleştirilmiş bir tedavi planını hak ettiğine inanıyorum.",
-      "Güvenli ve yargılayıcı olmayan bir ortamda, sizinle birlikte içsel dünyanızı keşfetmek ve hayatınızda anlamlı değişiklikler yaratmanıza yardımcı olmak için buradayım.",
+      "Lisans eğitimimi Psikoloji, lisansüstü eğitimimi Klinik Psikoloji alanında tamamladım. Amerika'da Harvard Üniversitesi'nde 'Psikoterapi ve Meditasyon' eğitimi aldım ve çeşitli üniversitelerde eğitim, konferans ve etkinliklere katıldım.",
+      "Türkiye'de birçok TV ve radyo programına konuk oldum ve konuşmalar yaptım. İletişim, insan ilişkileri, aşk, sevgi, bağlılık, aldatma, ayrılık gibi duyguların insan doğasında işlenişi ve çözümlenmesi konusuna yoğunlaştım, bu alanda araştırmalar yapıp çalışmalar yürüttüm. Türkiye'nin birçok şehrinde binlerce insana psikoloji alanında seminerler verdim.",
+      "Çektiğim videolar ve yazdıklarım büyük ilgi gördü, Instagram'da 1 milyondan fazla takipçiye ulaştım. İki kitabım var ve farklı psikoloji alanlarında eğitim ve sertifikaya sahibim.",
+      "Ergen ve yetişkinlerle bireysel ve çift terapisti olarak çalışıyorum. Dünyanın birçok ülkesinden danışan ve hastalarımı online ve yüz yüze görmeye devam ediyorum. Mert Koçak Psikoloji Danışmanlık Merkezi'nin kurucusuyum. New York ve İstanbul'da yaşamımı sürdürüyor, İstanbul'da kurduğum psikoloji danışmanlık merkezinde klinik psikolog olarak mesleğime devam ediyorum.",
     ],
     ctaLabel: "İletişime Geç",
   },
@@ -172,14 +173,16 @@ export const defaultSettings: SiteSettings = {
  * Hata durumunda varsayılanlara düşer (site asla kırılmaz).
  */
 export async function getSettings(): Promise<SiteSettings> {
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/settings`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return defaultSettings;
-    const json = (await res.json()) as { data: SiteSettings };
-    return json.data ?? defaultSettings;
-  } catch {
-    return defaultSettings;
-  }
+  // GEÇİCİ: backend fetch devre dışı, elle girilen defaultSettings kullanılıyor.
+  return defaultSettings;
+  // try {
+  //   const res = await fetch(`${API_BASE_URL}/api/settings`, {
+  //     cache: "no-store",
+  //   });
+  //   if (!res.ok) return defaultSettings;
+  //   const json = (await res.json()) as { data: SiteSettings };
+  //   return json.data ?? defaultSettings;
+  // } catch {
+  //   return defaultSettings;
+  // }
 }

@@ -55,13 +55,12 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         className="absolute inset-x-4 top-4 md:top-6 flex items-center justify-between px-4 md:px-12"
       >
-        <a
-          href="#"
-          onClick={(e) => handleNavClick(e, "#")}
+        <Link
+          href="/"
           className="text-white font-light tracking-[0.3em] text-sm hover:text-accent transition-colors"
         >
           MERT KOÇAK
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-6 text-white/80 text-sm">
           {navLinks.map((link) =>
             link.href.startsWith("#") ? (
@@ -112,13 +111,12 @@ export default function Navbar() {
       >
         <div className="flex items-center gap-1 px-2 py-2 bg-primary/95 backdrop-blur-md rounded-full border border-white/10 shadow-2xl">
           {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => handleNavClick(e, "#")}
+          <Link
+            href="/"
             className="px-4 py-2 text-white font-medium text-sm tracking-wider hover:text-accent transition-colors"
           >
             MK
-          </a>
+          </Link>
 
           {/* Divider */}
           <div className="w-px h-6 bg-white/20" />

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Therapies from "@/components/Therapies";
 import Testimonials from "@/components/Testimonials";
+import VideoStories from "@/components/VideoStories";
 import Contact from "@/components/Contact";
 import { getSettings, type SiteSettings } from "@/lib/settings";
 import { getTherapies } from "@/lib/therapies";
@@ -71,6 +72,7 @@ export default async function Home() {
       <About settings={settings} />
       <Therapies therapies={therapies} />
       <Testimonials testimonials={testimonials} settings={settings} />
+      <VideoStories />
       <Contact settings={settings} />
     </main>
   );
