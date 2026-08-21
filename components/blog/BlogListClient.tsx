@@ -118,7 +118,7 @@ export default function BlogListClient({
       {featuredPosts.length > 0 && (
         <section className="px-6 md:px-16 py-20 bg-[#f5f3ef]">
           <div className="max-w-7xl mx-auto">
-            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-primary/40 text-xs tracking-widest uppercase mb-8">
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-primary/60 text-xs tracking-widest uppercase mb-8">
               Öne Çıkan Yazılar
             </motion.p>
 
@@ -143,7 +143,7 @@ export default function BlogListClient({
                     </div>
                     <div className="flex items-center justify-between">
                       <p className="text-primary/60 text-sm line-clamp-2 max-w-md">{post.excerpt}</p>
-                      <div className="flex items-center gap-4 text-primary/40 text-sm shrink-0 ml-4">
+                      <div className="flex items-center gap-4 text-primary/60 text-sm shrink-0 ml-4">
                         <span>{post.date}</span>
                         <span className="w-1 h-1 rounded-full bg-primary/30" />
                         <span>{post.readTime}</span>
@@ -161,15 +161,15 @@ export default function BlogListClient({
       <section className="px-6 md:px-16 py-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="flex items-center justify-between mb-12">
-            <p className="text-primary/40 text-xs tracking-widest uppercase">
+            <p className="text-primary/60 text-xs tracking-widest uppercase">
               {activeCategory ? `${activeCategory} Yazıları` : "Tüm Yazılar"}
             </p>
             <div className="h-px flex-1 bg-primary/10 mx-8" />
-            <p className="text-primary/40 text-sm">{posts.length} yazı</p>
+            <p className="text-primary/60 text-sm">{posts.length} yazı</p>
           </motion.div>
 
           {posts.length === 0 ? (
-            <p className="text-center text-primary/40 py-16">Bu kategoride henüz yazı yok.</p>
+            <p className="text-center text-primary/60 py-16">Bu kategoride henüz yazı yok.</p>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, index) => (
@@ -183,11 +183,11 @@ export default function BlogListClient({
                     <div className="flex items-center gap-3 mb-3">
                       {post.category && <span className="text-accent text-xs font-medium">{post.category}</span>}
                       <span className="w-1 h-1 rounded-full bg-primary/20" />
-                      <span className="text-primary/40 text-xs">{post.readTime}</span>
+                      <span className="text-primary/60 text-xs">{post.readTime}</span>
                     </div>
                     <h3 className="text-xl font-serif text-primary leading-snug mb-2 group-hover:text-accent transition-colors">{post.title}</h3>
                     <p className="text-primary/50 text-sm line-clamp-2 mb-4">{post.excerpt}</p>
-                    <p className="text-primary/30 text-xs">{post.date}</p>
+                    <p className="text-primary/50 text-xs">{post.date}</p>
                   </Link>
                 </motion.article>
               ))}
@@ -205,7 +205,7 @@ export default function BlogListClient({
                   Önceki
                 </Link>
               )}
-              <span className="text-primary/40 text-sm">{currentPage} / {lastPage}</span>
+              <span className="text-primary/60 text-sm">{currentPage} / {lastPage}</span>
               {currentPage < lastPage && (
                 <Link
                   href={`/blog?${activeCategory ? `kategori=${activeCategory}&` : ""}page=${currentPage + 1}`}

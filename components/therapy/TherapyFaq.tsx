@@ -18,7 +18,7 @@ export default function TherapyFaq({ items }: { items: TherapyFaqItem[] }) {
                 <h3 className="text-primary font-medium text-base md:text-lg">
                   {item.question}
                 </h3>
-                <span className="text-accent text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform">
+                <span className="text-accent-ink text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform">
                   +
                 </span>
               </summary>
@@ -27,7 +27,7 @@ export default function TherapyFaq({ items }: { items: TherapyFaqItem[] }) {
                 {item.link && (
                   <Link
                     href={item.link.href}
-                    className="text-accent underline underline-offset-2 hover:text-primary transition-colors"
+                    className="text-accent-ink underline underline-offset-2 hover:text-primary transition-colors"
                   >
                     {item.link.text}
                   </Link>

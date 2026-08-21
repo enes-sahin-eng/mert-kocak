@@ -19,7 +19,7 @@ export default function TherapyProcess({
               key={step.title}
               className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8 p-6 rounded-2xl bg-white/60 border border-primary/5"
             >
-              <p className="text-accent font-serif text-3xl italic flex-shrink-0">
+              <p className="text-accent-ink font-serif text-3xl italic flex-shrink-0">
                 {String(index + 1).padStart(2, "0")}
               </p>
               <div>

@@ -185,7 +185,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
                 </motion.div>
               </div>
             </div>
-            <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
+            <p className="text-white/60 text-xs tracking-widest uppercase mb-2">
               {promo.label}
             </p>
             <p className="text-white text-sm font-medium group-hover:text-accent transition-colors flex items-center gap-2">

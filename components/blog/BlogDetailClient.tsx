@@ -80,10 +80,10 @@ function TableOfContents({ items, activeId }: { items: TOCItem[]; activeId: stri
     <>
       <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }} className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 z-50 w-64">
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-primary/5">
-          <p className="text-primary/40 text-xs tracking-widest uppercase mb-4">İçindekiler</p>
+          <p className="text-primary/60 text-xs tracking-widest uppercase mb-4">İçindekiler</p>
           <nav className="space-y-1 max-h-[60vh] overflow-y-auto">
             {items.map((item) => (
-              <button key={item.id} onClick={() => scrollToHeading(item.id)} className={`group flex items-start gap-2 w-full text-left text-sm py-1.5 transition-all ${item.level === 3 ? "pl-4" : ""} ${activeId === item.id ? "text-accent font-medium" : "text-primary/50 hover:text-primary"}`}>
+              <button key={item.id} onClick={() => scrollToHeading(item.id)} className={`group flex items-start gap-2 w-full text-left text-sm py-1.5 transition-all ${item.level === 3 ? "pl-4" : ""} ${activeId === item.id ? "text-accent-ink font-medium" : "text-primary/50 hover:text-primary"}`}>
                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors ${activeId === item.id ? "bg-accent" : "bg-primary/20 group-hover:bg-primary/40"}`} />
                 <span className="leading-snug">{item.text}</span>
               </button>
@@ -117,7 +117,7 @@ function TableOfContents({ items, activeId }: { items: TOCItem[]; activeId: stri
                   </div>
                   <nav className="space-y-1 overflow-y-auto max-h-[50vh]">
                     {items.map((item) => (
-                      <button key={item.id} onClick={() => scrollToHeading(item.id)} className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-xl transition-all ${item.level === 3 ? "pl-8" : ""} ${activeId === item.id ? "bg-accent/10 text-accent" : "text-primary/70 hover:bg-primary/5"}`}>
+                      <button key={item.id} onClick={() => scrollToHeading(item.id)} className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-xl transition-all ${item.level === 3 ? "pl-8" : ""} ${activeId === item.id ? "bg-accent/10 text-accent-ink" : "text-primary/70 hover:bg-primary/5"}`}>
                         <span className={`w-2 h-2 rounded-full flex-shrink-0 ${activeId === item.id ? "bg-accent" : "bg-primary/20"}`} />
                         <span>{item.text}</span>
                       </button>
@@ -141,7 +141,7 @@ function FAQSection({ items }: { items: FaqItem[] }) {
     <section className="bg-[#f5f3ef] px-6 md:px-16 py-20">
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <p className="text-accent text-xs tracking-widest uppercase mb-3">SSS</p>
+          <p className="text-accent-ink text-xs tracking-widest uppercase mb-3">SSS</p>
           <h2 className="text-3xl md:text-4xl font-serif text-primary">Sık Sorulan Sorular</h2>
         </motion.div>
         <div className="space-y-4">
@@ -210,7 +210,7 @@ function AuthorNewsletterSection({ author }: { author: Post["author"] }) {
                 <img src={author.image ?? "/mert-kocak.jpg"} alt={author.name} className="object-cover w-full h-full" />
               </div>
               <div>
-                <p className="text-primary/40 text-xs tracking-widest uppercase mb-1">Yazar</p>
+                <p className="text-primary/60 text-xs tracking-widest uppercase mb-1">Yazar</p>
                 <p className="font-serif text-2xl text-primary">{author.name}</p>
                 <p className="text-primary/50">{author.title}</p>
               </div>
@@ -390,7 +390,7 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
                   prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
                   prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
                   prose-p:text-primary/70 prose-p:leading-relaxed
-                  prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+                  prose-a:text-accent-ink prose-a:no-underline hover:prose-a:underline
                   prose-strong:text-primary prose-strong:font-medium
                   prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-primary/5
                   prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl
@@ -398,11 +398,11 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
                   prose-figcaption:text-center prose-figcaption:text-primary/50 prose-figcaption:text-sm
                   prose-img:rounded-2xl prose-img:shadow-lg
                   prose-ul:text-primary/70 prose-ol:text-primary/70
-                  prose-li:marker:text-accent
+                  prose-li:marker:text-accent-ink
                   prose-hr:border-primary/10 prose-hr:my-12
                   [&_.lead]:text-xl [&_.lead]:text-primary/80 [&_.lead]:leading-relaxed [&_.lead]:mb-8
                   [&_figure]:my-10
-                  [&_blockquote_cite]:block [&_blockquote_cite]:mt-3 [&_blockquote_cite]:text-accent [&_blockquote_cite]:text-sm
+                  [&_blockquote_cite]:block [&_blockquote_cite]:mt-3 [&_blockquote_cite]:text-accent-ink [&_blockquote_cite]:text-sm
                 "
                 dangerouslySetInnerHTML={{ __html: html }}
               />
@@ -410,7 +410,7 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
               {/* Etiketler */}
               {post.tags.length > 0 && (
                 <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-16 pt-8 border-t border-primary/10">
-                  <p className="text-primary/40 text-xs tracking-widest uppercase mb-4">Etiketler</p>
+                  <p className="text-primary/60 text-xs tracking-widest uppercase mb-4">Etiketler</p>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span key={tag} className="px-4 py-2 bg-primary/5 text-primary/60 text-sm rounded-full">{tag}</span>
@@ -421,7 +421,7 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
 
               {/* Paylaş */}
               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-8 flex items-center gap-4">
-                <p className="text-primary/40 text-sm">Paylaş:</p>
+                <p className="text-primary/60 text-sm">Paylaş:</p>
                 <div className="flex gap-3">
                   {shareIcons.map((social) => (
                     <button key={social.name} onClick={() => share(social.key)} className="w-10 h-10 rounded-full bg-primary/5 hover:bg-primary hover:text-white flex items-center justify-center text-primary/60 transition-all" aria-label={`${social.name}'da paylaş`}>
@@ -445,7 +445,7 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
           <div className="max-w-7xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex items-center justify-between mb-12">
               <div>
-                <p className="text-primary/40 text-xs tracking-widest uppercase mb-2">Okumaya Devam Et</p>
+                <p className="text-primary/60 text-xs tracking-widest uppercase mb-2">Okumaya Devam Et</p>
                 <h2 className="text-3xl md:text-4xl font-serif text-primary">İlgili Yazılar</h2>
               </div>
               <Link href="/blog" className="hidden md:inline-flex items-center gap-2 text-primary/60 hover:text-accent transition-colors">

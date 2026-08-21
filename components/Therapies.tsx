@@ -249,7 +249,7 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
                   <p>{therapies[activeIndex].details}</p>
                 </div>
                 <div className="md:hidden">
-                  <p className="text-accent font-medium">
+                  <p className="text-accent-ink font-medium">
                     {String(activeIndex + 1).padStart(2, "0")} / {String(therapies.length).padStart(2, "0")}
                   </p>
                 </div>
@@ -260,14 +260,14 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
 
         {/* Section label */}
         <div className="absolute top-6 md:top-8 left-4 md:left-16 z-20">
-          <p className="text-xs tracking-[0.3em] text-primary/40 uppercase">
+          <p className="text-xs tracking-[0.3em] text-primary/60 uppercase">
             Terapiler
           </p>
         </div>
 
         {/* Counter - desktop */}
         <div className="absolute top-6 md:top-8 right-4 md:right-16 z-20 hidden md:block">
-          <p className="text-sm text-accent">
+          <p className="text-sm text-accent-ink">
             {String(activeIndex + 1).padStart(2, "0")} / {String(therapies.length).padStart(2, "0")}
           </p>
         </div>

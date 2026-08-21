@@ -504,7 +504,7 @@ export default function FloatingActions({ settings }: { settings: SiteSettings }
                       transition={{ delay: 0.4 }}
                       className="text-center pt-2"
                     >
-                      <p className="text-primary/40 text-sm mb-3">
+                      <p className="text-primary/60 text-sm mb-3">
                         veya hızlı iletişim için
                       </p>
                       <a

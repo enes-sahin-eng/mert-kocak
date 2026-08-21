@@ -277,7 +277,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
           transition={{ duration: 1 }}
           className="text-center mb-16 md:mb-24"
         >
-          <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-accent-ink text-sm tracking-[0.3em] uppercase mb-4">
             İletişim
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary mb-6">
@@ -333,7 +333,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="ml-auto text-primary/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300"
+                    className="ml-auto text-primary/60 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300"
                   >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
@@ -378,7 +378,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                 </div>
                 <div className="flex justify-between">
                   <span>Pazar</span>
-                  <span className="text-white/40">Kapalı</span>
+                  <span className="text-white/60">Kapalı</span>
                 </div>
               </div>
             </motion.div>
@@ -602,10 +602,10 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
       <div className="relative z-10 border-t border-primary/10 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary/40 text-sm">
+            <p className="text-primary/60 text-sm">
               © {new Date().getFullYear()} Mert Koçak. Tüm hakları saklıdır.
             </p>
-            <div className="flex items-center gap-6 text-primary/40 text-sm">
+            <div className="flex items-center gap-6 text-primary/60 text-sm">
               <a href="#" className="hover:text-primary transition-colors">
                 Gizlilik Politikası
               </a>

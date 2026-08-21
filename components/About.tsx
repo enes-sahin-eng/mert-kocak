@@ -25,7 +25,7 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
   // Parallax for elements
   const titleY = useTransform(smoothProgress, [0, 0.5], [100, 0]);
-  const titleOpacity = useTransform(smoothProgress, [0, 0.3], [0, 1]);
+  const titleOpacity = useTransform(smoothProgress, [0, 0.3], [0.6, 1]);
 
   const imageScale = useTransform(smoothProgress, [0.1, 0.5], [0.8, 1]);
   const imageOpacity = useTransform(smoothProgress, [0.1, 0.4], [0, 1]);
@@ -60,14 +60,14 @@ export default function About({ settings }: { settings: SiteSettings }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="text-primary/50 text-sm tracking-[0.3em] uppercase mb-4"
+            className="text-primary/60 text-sm tracking-[0.3em] uppercase mb-4"
           >
             {about.eyebrow}
           </motion.p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary">
             <span className="italic">{about.titleLine1}</span>
           </h2>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary/30 -mt-2">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary/85 -mt-2">
             {about.titleLine2}
           </h2>
         </motion.div>
@@ -156,19 +156,19 @@ export default function About({ settings }: { settings: SiteSettings }) {
         >
           {about.floating.statTop}
           <br />
-          <span className="text-accent">{about.floating.statBottom}</span>
+          <span className="text-accent-ink">{about.floating.statBottom}</span>
         </motion.p>
 
         <motion.p
           style={{ y: floatY3 }}
-          className="absolute bottom-[22%] left-12 md:left-24 lg:left-40 text-primary/50 text-xs md:text-sm tracking-widest uppercase"
+          className="absolute bottom-[22%] left-12 md:left-24 lg:left-40 text-primary/60 text-xs md:text-sm tracking-widest uppercase"
         >
           {about.floating.tag1}
         </motion.p>
 
         <motion.p
           style={{ y: floatY1 }}
-          className="absolute bottom-[28%] right-12 md:right-24 lg:right-40 text-primary/50 text-xs md:text-sm tracking-widest uppercase"
+          className="absolute bottom-[28%] right-12 md:right-24 lg:right-40 text-primary/60 text-xs md:text-sm tracking-widest uppercase"
         >
           {about.floating.tag2}
         </motion.p>

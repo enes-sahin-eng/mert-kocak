@@ -253,12 +253,16 @@ export default function Testimonials({
                   onClick={() => setActiveIndex(index)}
                   aria-label={`${index + 1}. yoruma git`}
                   aria-current={index === activeIndex ? "true" : undefined}
-                  className={`relative h-2 rounded-full transition-all duration-300 before:content-[''] before:absolute before:-inset-2 ${
-                    index === activeIndex
-                      ? "bg-accent w-8"
-                      : "bg-white/30 hover:bg-white/50 w-2"
-                  }`}
-                />
+                  className="group relative flex items-center justify-center w-8 h-8"
+                >
+                  <span
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === activeIndex
+                        ? "bg-accent w-8"
+                        : "bg-white/30 group-hover:bg-white/50 w-2"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 

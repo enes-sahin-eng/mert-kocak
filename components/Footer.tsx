@@ -124,7 +124,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 whileHover={{ scale: 1.05 }}
                 className="absolute top-[5%] right-[15%] md:right-[25%] text-4xl md:text-6xl lg:text-7xl font-serif text-primary hover:text-accent transition-colors cursor-pointer block"
               >
-                <span className="text-accent text-lg mr-1">+</span>
+                <span className="text-accent-ink text-lg mr-1">+</span>
                 Hakkımda
               </motion.span>
             </Link>
@@ -138,7 +138,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 whileHover={{ scale: 1.05 }}
                 className="absolute top-[30%] right-[5%] md:right-[10%] text-4xl md:text-6xl lg:text-7xl font-serif text-primary hover:text-accent transition-colors cursor-pointer block"
               >
-                <span className="text-accent text-lg mr-1">+</span>
+                <span className="text-accent-ink text-lg mr-1">+</span>
                 Terapiler
               </motion.span>
             </Link>
@@ -152,7 +152,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 whileHover={{ scale: 1.05 }}
                 className="absolute top-[55%] left-[5%] md:left-[15%] text-4xl md:text-6xl lg:text-7xl font-serif text-primary hover:text-accent transition-colors cursor-pointer block"
               >
-                <span className="text-accent text-lg mr-1">+</span>
+                <span className="text-accent-ink text-lg mr-1">+</span>
                 Yorumlar
               </motion.span>
             </Link>
@@ -166,7 +166,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 whileHover={{ scale: 1.05 }}
                 className="absolute top-[45%] right-[20%] md:right-[30%] text-4xl md:text-6xl lg:text-7xl font-serif text-primary hover:text-accent transition-colors cursor-pointer block"
               >
-                <span className="text-accent text-lg mr-1">+</span>
+                <span className="text-accent-ink text-lg mr-1">+</span>
                 İletişim
               </motion.span>
             </Link>
@@ -179,7 +179,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
               transition={{ duration: 1, delay: 0.5 }}
               className="absolute bottom-0 left-0 md:left-[5%]"
             >
-              <p className="text-primary/30 text-sm leading-relaxed">
+              <p className="text-primary/60 text-sm leading-relaxed">
                 İstanbul&apos;da
                 <br />
                 Hizmet
@@ -223,7 +223,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
         >
           <Link
             href="/"
-            className="text-6xl md:text-8xl lg:text-9xl font-serif text-primary/10 hover:text-primary/20 transition-colors tracking-tight whitespace-nowrap cursor-pointer uppercase"
+            className="text-6xl md:text-8xl lg:text-9xl font-serif text-primary/50 hover:text-primary/65 transition-colors tracking-tight whitespace-nowrap cursor-pointer uppercase"
           >
             {name}
           </Link>
