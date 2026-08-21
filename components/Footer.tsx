@@ -85,14 +85,16 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                     Instagram
                   </a>
                 )}
-                {settings.social.linkedin && (
+                {/* LinkedIn yerine YouTube gösteriliyor. backend "social.linkedin" alanı
+                    yayınlamaya devam ediyor (bkz. lib/settings.ts), sadece burada kullanılmıyor. */}
+                {settings.social.youtube && (
                   <a
-                    href={settings.social.linkedin}
+                    href={settings.social.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary/40 hover:text-accent transition-colors text-sm"
                   >
-                    LinkedIn
+                    YouTube
                   </a>
                 )}
                 {settings.whatsapp && (

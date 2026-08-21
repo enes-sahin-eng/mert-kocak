@@ -11,7 +11,8 @@ import { getTestimonials } from "@/lib/testimonials";
 import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
 
 function buildHomeJsonLd(settings: SiteSettings) {
-  const sameAs = [settings.social.instagram, settings.social.linkedin].filter(Boolean);
+  // sameAs: linkedin yerine youtube kullanılıyor (bkz. lib/settings.ts).
+  const sameAs = [settings.social.instagram, settings.social.youtube].filter(Boolean);
   const image = settings.author.image ?? undefined;
 
   return {

@@ -78,7 +78,9 @@ export interface SiteSettings {
   mapUrl: string;
   social: {
     instagram: string;
+    // linkedin: backend'den gelmeye devam ediyor, arayüzde şu an gösterilmiyor (YouTube ile değiştirildi).
     linkedin: string;
+    youtube: string;
   };
   stats: SiteStat[];
   author: AuthorInfo;
@@ -101,6 +103,7 @@ export const defaultSettings: SiteSettings = {
   social: {
     instagram: "https://www.instagram.com/mertkocakmusic",
     linkedin: "https://linkedin.com",
+    youtube: "https://www.youtube.com/@MertKocak",
   },
   stats: [
     { value: "500+", label: "Mutlu Danışan" },

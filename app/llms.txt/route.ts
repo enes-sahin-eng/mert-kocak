@@ -102,7 +102,8 @@ export async function GET(request: Request): Promise<Response> {
   // Opsiyonel (context kısaysa atlanabilir)
   const optional: string[] = [];
   if (social.instagram) optional.push(`- [Instagram](${social.instagram})`);
-  if (social.linkedin) optional.push(`- [LinkedIn](${social.linkedin})`);
+  // linkedin yerine youtube gösteriliyor (bkz. lib/settings.ts)
+  if (social.youtube) optional.push(`- [YouTube](${social.youtube})`);
   if (settings.mapUrl) optional.push(`- [Harita / Konum](${settings.mapUrl})`);
   if (optional.length) {
     lines.push("## Optional");

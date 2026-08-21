@@ -109,9 +109,11 @@ const buildSocialLinks = (settings: SiteSettings) => [
       </svg>
     ),
   },
+  // LinkedIn ikonu YouTube ile değiştirildi. backend "social.linkedin" alanı yayınlamaya
+  // devam ediyor (bkz. lib/settings.ts), sadece burada gösterilmiyor.
   {
-    name: "LinkedIn",
-    href: settings.social.linkedin,
+    name: "YouTube",
+    href: settings.social.youtube,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -124,9 +126,8 @@ const buildSocialLinks = (settings: SiteSettings) => [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-        <rect width="4" height="12" x="2" y="9" />
-        <circle cx="4" cy="4" r="2" />
+        <path d="M22 8.2a3.5 3.5 0 0 0-2.46-2.48C17.7 5.2 12 5.2 12 5.2s-5.7 0-7.54.52A3.5 3.5 0 0 0 2 8.2 36.6 36.6 0 0 0 1.5 12a36.6 36.6 0 0 0 .5 3.8 3.5 3.5 0 0 0 2.46 2.48C6.3 18.8 12 18.8 12 18.8s5.7 0 7.54-.52A3.5 3.5 0 0 0 22 15.8 36.6 36.6 0 0 0 22.5 12a36.6 36.6 0 0 0-.5-3.8Z" />
+        <path d="m10 9.8 5 2.2-5 2.2Z" />
       </svg>
     ),
   },
