@@ -99,7 +99,7 @@ export const defaultSettings: SiteSettings = {
   address: "Nisbetiye, Ahmet Adnan Saygun Cd. Menekşe 1 Blok No:2 D:3, 34337 Beşiktaş/İstanbul",
   mapUrl: "https://www.google.com/maps/search/?api=1&query=%C4%B0stanbul+Etiler+Psikoloji+Dan%C4%B1%C5%9Fmanl%C4%B1k+Merkezi+Mert+Ko%C3%A7ak+Nisbetiye+Ahmet+Adnan+Saygun+Cd+Menek%C5%9Fe+1+Blok+No%3A2+D%3A3+34337+Be%C5%9Fikta%C5%9F",
   social: {
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/mertkocakmusic",
     linkedin: "https://linkedin.com",
   },
   stats: [
