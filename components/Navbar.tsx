@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { track } from "@/lib/tracking";
 
@@ -55,11 +56,15 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         className="absolute inset-x-4 top-4 md:top-6 flex items-center justify-between px-4 md:px-12"
       >
-        <Link
-          href="/"
-          className="text-white font-light tracking-[0.3em] text-sm hover:text-accent transition-colors"
-        >
-          MERT KOÇAK
+        <Link href="/" className="block mt-2 hover:opacity-80 transition-opacity">
+          <Image
+            src="/logo.png"
+            alt="Mert Koçak - Klinik Psikolog"
+            width={80}
+            height={80}
+            priority
+            className="h-16 md:h-20 w-auto"
+          />
         </Link>
         <div className="hidden md:flex items-center gap-6 text-white/80 text-sm">
           {navLinks.map((link) =>
@@ -89,11 +94,31 @@ export default function Navbar() {
             track("info_cta_click", "navbar");
             handleNavClick(e, "#contact");
           }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 py-2.5 bg-white text-primary text-sm font-medium rounded-full hover:bg-accent transition-colors"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="group relative mt-2 inline-flex items-center gap-2.5 py-1.5 pl-1.5 pr-5 rounded-full border border-white/25 hover:border-accent transition-colors duration-300"
         >
-          Randevu
+          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-primary group-hover:scale-105 transition-transform duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <line x1="16" x2="16" y1="2" y2="6" />
+              <line x1="8" x2="8" y1="2" y2="6" />
+              <line x1="3" x2="21" y1="10" y2="10" />
+            </svg>
+          </span>
+          <span className="text-white text-sm font-medium tracking-wide group-hover:text-accent transition-colors duration-300">
+            Randevu Al
+          </span>
         </motion.a>
       </motion.div>
 
@@ -111,11 +136,8 @@ export default function Navbar() {
       >
         <div className="flex items-center gap-1 px-2 py-2 bg-primary/95 backdrop-blur-md rounded-full border border-white/10 shadow-2xl">
           {/* Logo */}
-          <Link
-            href="/"
-            className="px-4 py-2 text-white font-medium text-sm tracking-wider hover:text-accent transition-colors"
-          >
-            MK
+          <Link href="/" className="px-3 py-1 block hover:opacity-80 transition-opacity">
+            <Image src="/logo.png" alt="Mert Koçak" width={40} height={40} className="h-10 w-auto" />
           </Link>
 
           {/* Divider */}
@@ -152,11 +174,31 @@ export default function Navbar() {
               track("info_cta_click", "navbar");
               handleNavClick(e, "#contact");
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-5 py-2 bg-white text-primary text-sm font-medium rounded-full hover:bg-accent transition-colors ml-1"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="group ml-1 relative inline-flex items-center gap-2 py-1 pl-1 pr-4 rounded-full border border-white/20 hover:border-accent transition-colors duration-300"
           >
-            Randevu
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-accent text-primary group-hover:scale-105 transition-transform duration-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="18" height="18" x="3" y="4" rx="2" />
+                <line x1="16" x2="16" y1="2" y2="6" />
+                <line x1="8" x2="8" y1="2" y2="6" />
+                <line x1="3" x2="21" y1="10" y2="10" />
+              </svg>
+            </span>
+            <span className="text-white text-sm font-medium group-hover:text-accent transition-colors duration-300">
+              Randevu
+            </span>
           </motion.a>
         </div>
       </motion.div>

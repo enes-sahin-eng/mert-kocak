@@ -213,7 +213,7 @@ export default function Testimonials({
                   </div>
                   <div>
                     <p className="text-white font-medium">{active.name}</p>
-                    <p className="text-white/40 text-sm">{active.date}</p>
+                    <p className="text-white/60 text-sm">{active.date}</p>
                   </div>
                 </div>
               </div>
@@ -227,6 +227,7 @@ export default function Testimonials({
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={prevTestimonial}
+              aria-label="Önceki yorum"
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
             >
               <svg
@@ -250,7 +251,9 @@ export default function Testimonials({
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  aria-label={`${index + 1}. yoruma git`}
+                  aria-current={index === activeIndex ? "true" : undefined}
+                  className={`relative h-2 rounded-full transition-all duration-300 before:content-[''] before:absolute before:-inset-2 ${
                     index === activeIndex
                       ? "bg-accent w-8"
                       : "bg-white/30 hover:bg-white/50 w-2"
@@ -264,6 +267,7 @@ export default function Testimonials({
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={nextTestimonial}
+              aria-label="Sonraki yorum"
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
             >
               <svg

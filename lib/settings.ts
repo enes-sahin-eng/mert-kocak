@@ -161,11 +161,11 @@ export const defaultSettings: SiteSettings = {
     },
     promo: {
       enabled: true,
-      label: "Tanıtım",
-      text: "Hikayemi Keşfet",
+      label: "Bu Hafta",
+      text: "Videomuzu Keşfedin",
       type: "youtube",
       videoUrl: null,
-      youtube: "https://www.youtube.com/watch?v=RFTUZqXZN6M",
+      youtube: "https://youtu.be/pW2K6Sa9OXQ?si=8ACt_tKTx8i_SgKU",
     },
   },
 };

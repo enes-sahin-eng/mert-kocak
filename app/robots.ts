@@ -12,6 +12,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: absoluteUrl("/sitemap.xml"),
-    host: absoluteUrl(""),
+    // Host direktifi şemasız (protokolsüz) alan adı bekler.
+    host: new URL(absoluteUrl("")).host,
   };
 }

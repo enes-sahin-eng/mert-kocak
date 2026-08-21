@@ -9,9 +9,25 @@ interface Video {
 }
 
 const videos: Video[] = [
-  { id: "7d7fDg15Gnc", title: "Danışan Deneyimi" },
-  { id: "zP7T42oz-sQ", title: "Danışan Deneyimi" },
-  { id: "pW2K6Sa9OXQ", title: "Danışan Deneyimi" },
+  {
+    id: "7d7fDg15Gnc",
+    title:
+      "İlişki Bitmeden Bağ Biter Mi? — Aldatma ve Aldatılma Serisi, Bölüm 6",
+  },
+  {
+    id: "zP7T42oz-sQ",
+    title: "Aldatma Bir Kaçış Mı? — Aldatma ve Aldatılma Serisi, Bölüm 7",
+  },
+  {
+    id: "pW2K6Sa9OXQ",
+    title:
+      "Aldatmayı Kimden Öğreniyoruz? — Aldatma ve Aldatılma Serisi, Bölüm 8",
+  },
+  { id: "VPLnuuGYF9Q", title: "Aldatanlar Aslında Ne Arıyor?" },
+  {
+    id: "nIRAsfai-ag",
+    title: "İletişimsizlik Aldatmaya Nasıl Zemin Hazırlar?",
+  },
 ];
 
 function VideoModal({ video, onClose }: { video: Video; onClose: () => void }) {
@@ -50,7 +66,14 @@ function VideoModal({ video, onClose }: { video: Video; onClose: () => void }) {
           aria-label="Videoyu kapat"
           className="absolute -top-10 right-0 sm:-top-12 sm:right-0 text-white/70 hover:text-white transition-colors"
         >
-          <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+          <svg
+            viewBox="0 0 24 24"
+            className="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          >
             <path d="M6 6l12 12M18 6L6 18" />
           </svg>
         </button>
@@ -94,7 +117,7 @@ export default function VideoStories() {
 
   return (
     <section className="bg-primary px-6 md:px-8 py-20 md:py-28 border-t border-white/10">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[100rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,14 +126,18 @@ export default function VideoStories() {
           className="text-center mb-10 md:mb-14"
         >
           <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">
-            Danışan Deneyimleri
+            Video İçerikler
           </p>
           <h2 className="text-3xl md:text-5xl font-serif text-white">
-            Videolarla Onların Hikayesi
+            İzle, Keşfet, Dönüş
           </h2>
+          <p className="mt-4 text-white/60 text-sm md:text-base max-w-xl mx-auto">
+            İlişkiler, kaygı, depresyon ve daha fazlası — aklınıza takılan
+            soruları tek tek yanıtlıyorum.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
           {videos.map((video, index) => (
             <motion.div
               key={video.id}
@@ -126,7 +153,9 @@ export default function VideoStories() {
       </div>
 
       <AnimatePresence>
-        {openVideo && <VideoModal video={openVideo} onClose={() => setOpenVideo(null)} />}
+        {openVideo && (
+          <VideoModal video={openVideo} onClose={() => setOpenVideo(null)} />
+        )}
       </AnimatePresence>
     </section>
   );

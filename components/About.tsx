@@ -130,7 +130,7 @@ export default function About({ settings }: { settings: SiteSettings }) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photoSrc}
-                alt="Mert Koçak"
+                alt="Klinik Psikolog Mert Koçak - Etiler, İstanbul"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Subtle overlay */}
@@ -145,14 +145,14 @@ export default function About({ settings }: { settings: SiteSettings }) {
         {/* Floating descriptive texts */}
         <motion.p
           style={{ y: floatY1 }}
-          className="absolute top-[18%] left-8 md:left-16 lg:left-32 text-primary/40 text-sm md:text-base font-light italic max-w-[150px] md:max-w-[200px]"
+          className="absolute top-[18%] left-8 md:left-16 lg:left-32 text-primary/60 text-sm md:text-base font-light italic max-w-[150px] md:max-w-[200px]"
         >
           &ldquo;{about.floating.quote}&rdquo;
         </motion.p>
 
         <motion.p
           style={{ y: floatY2 }}
-          className="absolute top-[25%] right-8 md:right-16 lg:right-32 text-primary/40 text-sm md:text-base font-light max-w-[150px] md:max-w-[200px] text-right"
+          className="absolute top-[25%] right-8 md:right-16 lg:right-32 text-primary/60 text-sm md:text-base font-light max-w-[150px] md:max-w-[200px] text-right"
         >
           {about.floating.statTop}
           <br />
@@ -161,14 +161,14 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
         <motion.p
           style={{ y: floatY3 }}
-          className="absolute bottom-[22%] left-12 md:left-24 lg:left-40 text-primary/30 text-xs md:text-sm tracking-widest uppercase"
+          className="absolute bottom-[22%] left-12 md:left-24 lg:left-40 text-primary/50 text-xs md:text-sm tracking-widest uppercase"
         >
           {about.floating.tag1}
         </motion.p>
 
         <motion.p
           style={{ y: floatY1 }}
-          className="absolute bottom-[28%] right-12 md:right-24 lg:right-40 text-primary/30 text-xs md:text-sm tracking-widest uppercase"
+          className="absolute bottom-[28%] right-12 md:right-24 lg:right-40 text-primary/50 text-xs md:text-sm tracking-widest uppercase"
         >
           {about.floating.tag2}
         </motion.p>
@@ -179,7 +179,7 @@ export default function About({ settings }: { settings: SiteSettings }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute bottom-8 md:bottom-12 text-center text-primary/40 text-sm tracking-wide"
+          className="absolute bottom-8 md:bottom-12 text-center text-primary/60 text-sm tracking-wide"
         >
           {about.scrollHint}
         </motion.p>

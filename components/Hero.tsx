@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import type { SiteSettings } from "@/lib/settings";
-import { youtubeEmbedUrl } from "@/lib/youtube";
+import { getYouTubeId, youtubeEmbedUrl } from "@/lib/youtube";
 import YouTubeBackground from "@/components/YouTubeBackground";
 
 export default function Hero({ settings }: { settings: SiteSettings }) {
@@ -20,6 +20,10 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
   const promoYoutube =
     promo.type === "youtube" ? youtubeEmbedUrl(promo.youtube) : null;
   const promoVideoSrc = promo.type === "upload" ? promo.videoUrl : null;
+  const promoYoutubeId = promo.type === "youtube" ? getYouTubeId(promo.youtube) : null;
+  const promoThumbnail = promoYoutubeId
+    ? `https://i.ytimg.com/vi/${promoYoutubeId}/hqdefault.jpg`
+    : null;
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -150,7 +154,18 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
           <div className="group cursor-pointer" onClick={openVideo}>
             {/* Small preview image */}
             <div className="w-48 h-32 rounded-lg overflow-hidden mb-4 relative bg-white/10 backdrop-blur-sm group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/30" />
+              {promoThumbnail ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={promoThumbnail}
+                  alt={promo.text ?? "Tanıtım videosu"}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/30" />
+              )}
+              <div className="absolute inset-0 bg-primary/30" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}

@@ -403,6 +403,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                     }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label={social.name}
                     className="w-12 h-12 rounded-full bg-white border border-primary/10 flex items-center justify-center text-primary/60 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
                   >
                     {social.icon}

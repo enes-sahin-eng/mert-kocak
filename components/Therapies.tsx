@@ -79,7 +79,7 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={therapy.image ?? `/therapy-${(index % 6) + 1}.jpg`}
-                alt={therapy.title}
+                alt={`${therapy.title} - Etiler, İstanbul Psikolog`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Gradient overlays */}
@@ -196,9 +196,28 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
                 {therapyDetailLinks[therapies[activeIndex].title] && (
                   <Link
                     href={therapyDetailLinks[therapies[activeIndex].title]}
-                    className="mt-4 md:mt-6 inline-block px-7 py-3 bg-white text-primary text-xs md:text-sm font-medium tracking-widest uppercase rounded-full shadow-lg hover:bg-accent hover:text-white transition-colors"
+                    className="group relative mt-4 md:mt-6 inline-flex items-center gap-2.5 py-1.5 pl-1.5 pr-6 rounded-full bg-primary shadow-xl shadow-black/25 hover:shadow-accent/30 transition-shadow duration-300"
                   >
-                    Detaylı Bilgi
+                    <span className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-accent text-primary group-hover:scale-105 transition-transform duration-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                      >
+                        <path d="M7 17L17 7" />
+                        <path d="M7 7h10v10" />
+                      </svg>
+                    </span>
+                    <span className="text-white text-xs md:text-sm font-medium tracking-widest uppercase group-hover:text-accent transition-colors duration-300">
+                      Detaylı Bilgi
+                    </span>
                   </Link>
                 )}
               </motion.div>

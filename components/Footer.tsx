@@ -71,7 +71,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
               style={{ opacity }}
               className="text-right"
             >
-              <p className="text-primary/40 text-xs tracking-widest uppercase mb-4">
+              <p className="text-primary/60 text-xs tracking-widest uppercase mb-4">
                 Sosyal Medya
               </p>
               <div className="flex gap-4 justify-end">
@@ -80,7 +80,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                     href={settings.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary/40 hover:text-accent transition-colors text-sm"
+                    className="text-primary/60 hover:text-accent transition-colors text-sm"
                   >
                     Instagram
                   </a>
@@ -92,7 +92,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                     href={settings.social.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary/40 hover:text-accent transition-colors text-sm"
+                    className="text-primary/60 hover:text-accent transition-colors text-sm"
                   >
                     YouTube
                   </a>
@@ -103,7 +103,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => track("whatsapp_click", "footer")}
-                    className="text-primary/40 hover:text-accent transition-colors text-sm"
+                    className="text-primary/60 hover:text-accent transition-colors text-sm"
                   >
                     WhatsApp
                   </a>
@@ -197,15 +197,15 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-primary/10"
           >
-            <p className="text-primary/40 text-sm">
+            <p className="text-primary/60 text-sm">
               © {year} {name}
             </p>
 
-            <p className="text-primary/30 text-xs text-center max-w-md">
+            <p className="text-primary/50 text-xs text-center max-w-md">
               Klinik Psikolog olarak bireysel ve çift terapisi hizmetleri sunuyorum.
             </p>
 
-            <p className="text-primary/40 text-sm">
+            <p className="text-primary/60 text-sm">
               Tüm hakları saklıdır.
             </p>
           </motion.div>
