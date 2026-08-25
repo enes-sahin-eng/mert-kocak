@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- GEÇİCİ SMTP modu boyunca kullanılmıyor, bkz. submitContact
 import { API_BASE_URL } from "@/lib/api";
 
 export interface ContactPayload {
@@ -42,13 +43,17 @@ export function captureAttribution(): Record<string, string | null> {
 }
 
 /**
- * İletişim formunu backend'e gönderir. 422'de alan hatalarını döndürür.
+ * İletişim formunu gönderir. 422'de alan hatalarını döndürür.
+ * GEÇİCİ: backend hazır olana kadar /api/contact (SMTP) kullanılıyor,
+ * bkz. app/api/contact/route.ts. Backend bağlanınca aşağıdaki satır
+ * `${API_BASE_URL}/api/contact` olarak geri değiştirilecek.
  */
 export async function submitContact(
   payload: ContactPayload,
 ): Promise<ContactResult> {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/contact`, {
+    const res = await fetch(`/api/contact`, {
+      // const res = await fetch(`${API_BASE_URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

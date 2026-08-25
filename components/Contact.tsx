@@ -342,6 +342,22 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
               ))}
             </div>
 
+            {/* Harita gömülü görünümü.
+                GEÇİCİ: iframe adresi burada sabit (hardcoded). Backend'e "mapEmbedUrl"
+                gibi bir alan eklenip settings.mapEmbedUrl üzerinden yönetilmesi gerekiyor. */}
+            <div className="mb-12 rounded-2xl overflow-hidden border border-primary/5">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.6493059027143!2d29.025567700000007!3d41.0766578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7699a3424e3%3A0xda1f401ab1c7792f!2s%C4%B0stanbul%20Etiler%20Psikoloji%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Merkezi%20-%20Uzm.%20Klinik%20Psikolog%20Mert%20Ko%C3%A7ak!5e0!3m2!1str!2str!4v1787656287270!5m2!1str!2str"
+                width="600"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="w-full h-[170px]"
+              />
+            </div>
+
             {/* Working hours */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
