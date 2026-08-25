@@ -149,7 +149,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.8 }}
-          className="absolute bottom-16 md:bottom-24 right-8 md:right-16 z-40 hidden lg:block"
+          className="absolute bottom-16 md:bottom-24 right-16 md:right-32 z-40 hidden lg:block"
         >
           <div className="group cursor-pointer" onClick={openVideo}>
             {/* Small preview image */}
