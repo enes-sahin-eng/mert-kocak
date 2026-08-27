@@ -637,7 +637,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
         {/* Designer Badge */}
         <div className="w-full bg-[#0d1d2b] py-3 flex justify-center items-center">
           <a 
-            href="https://ideazone.com.tr" 
+            href="https://ideazone.digital/"
             target="_blank" 
             rel="noopener noreferrer" 
             className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity group"
