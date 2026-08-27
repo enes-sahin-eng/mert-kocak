@@ -239,7 +239,7 @@ export default function FloatingActions({ settings }: { settings: SiteSettings }
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeModal}
-              className="fixed inset-0 bg-primary/80 backdrop-blur-sm z-50"
+              className="fixed inset-0 bg-primary/80 backdrop-blur-sm z-[110]"
             />
 
             {/* Modal */}
@@ -248,7 +248,7 @@ export default function FloatingActions({ settings }: { settings: SiteSettings }
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 50 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg bg-white rounded-3xl shadow-2xl z-50 overflow-hidden max-h-[90vh] flex flex-col"
+              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg bg-white rounded-3xl shadow-2xl z-[110] overflow-hidden max-h-[90vh] flex flex-col"
             >
               {/* Modal header */}
               <div className="relative bg-primary p-6 md:p-8">

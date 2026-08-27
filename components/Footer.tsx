@@ -229,6 +229,27 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           </Link>
         </motion.div>
       </div>
+
+      {/* Designer Badge */}
+      <div className="w-full bg-[#0d1d2b] py-3 flex justify-center items-center">
+        <a 
+          href="https://ideazone.com.tr" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity group"
+          aria-label="Design and Development by ideaZone DIGITAL"
+        >
+          <span className="text-[#94a3b8] text-sm font-light group-hover:text-white transition-colors">
+            Design & Development By
+          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/designer-logo-full.png" 
+            alt="ideaZone DIGITAL" 
+            className="h-5 md:h-6 w-auto object-contain" 
+          />
+        </a>
+      </div>
     </footer>
   );
 }

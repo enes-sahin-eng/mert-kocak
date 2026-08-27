@@ -615,21 +615,44 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 border-t border-primary/10 bg-white/50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary/60 text-sm">
-              © {new Date().getFullYear()} Mert Koçak. Tüm hakları saklıdır.
-            </p>
-            <div className="flex items-center gap-6 text-primary/60 text-sm">
-              <a href="#" className="hover:text-primary transition-colors">
-                Gizlilik Politikası
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Kullanım Şartları
-              </a>
+      <div className="relative z-10 flex flex-col">
+        <div className="border-t border-primary/10 bg-white/50 w-full">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-primary/60 text-sm">
+                © {new Date().getFullYear()} Mert Koçak. Tüm hakları saklıdır.
+              </p>
+              <div className="flex items-center gap-6 text-primary/60 text-sm">
+                <a href="#" className="hover:text-primary transition-colors">
+                  Gizlilik Politikası
+                </a>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Kullanım Şartları
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Designer Badge */}
+        <div className="w-full bg-[#0d1d2b] py-3 flex justify-center items-center">
+          <a 
+            href="https://ideazone.com.tr" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity group"
+            aria-label="Design and Development by ideaZone DIGITAL"
+          >
+            <span className="text-[#94a3b8] text-sm font-light group-hover:text-white transition-colors">
+              Design & Development By
+            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/designer-logo-full.png" 
+              alt="ideaZone DIGITAL" 
+              className="h-5 md:h-6 w-auto object-contain" 
+            />
+          </a>
         </div>
       </div>
     </section>

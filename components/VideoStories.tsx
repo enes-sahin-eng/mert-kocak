@@ -137,7 +137,7 @@ export default function VideoStories() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:grid md:grid-cols-3 xl:grid-cols-5 md:gap-5 pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {videos.map((video, index) => (
             <motion.div
               key={video.id}
@@ -145,6 +145,7 @@ export default function VideoStories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="w-[85%] sm:w-[60%] shrink-0 snap-center md:w-auto md:shrink md:snap-align-none"
             >
               <VideoThumb video={video} onOpen={() => setOpenVideo(video)} />
             </motion.div>

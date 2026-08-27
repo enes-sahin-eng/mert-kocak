@@ -23,12 +23,12 @@ export default function About({ settings }: { settings: SiteSettings }) {
   const rotation1 = useTransform(smoothProgress, [0, 1], [0, 360]);
   const rotation2 = useTransform(smoothProgress, [0, 1], [0, -360]);
 
-  // Parallax for elements
-  const titleY = useTransform(smoothProgress, [0, 0.5], [100, 0]);
-  const titleOpacity = useTransform(smoothProgress, [0, 0.3], [0.6, 1]);
+  // Parallax for elements — complete before section fills viewport (~0.33 progress)
+  const titleY = useTransform(smoothProgress, [0, 0.25], [60, 0]);
+  const titleOpacity = useTransform(smoothProgress, [0, 0.2], [0.6, 1]);
 
-  const imageScale = useTransform(smoothProgress, [0.1, 0.5], [0.8, 1]);
-  const imageOpacity = useTransform(smoothProgress, [0.1, 0.4], [0, 1]);
+  const imageScale = useTransform(smoothProgress, [0.05, 0.25], [0.85, 1]);
+  const imageOpacity = useTransform(smoothProgress, [0.05, 0.2], [0, 1]);
 
   // Floating text positions
   const floatY1 = useTransform(smoothProgress, [0, 1], [50, -50]);
@@ -145,14 +145,14 @@ export default function About({ settings }: { settings: SiteSettings }) {
         {/* Floating descriptive texts */}
         <motion.p
           style={{ y: floatY1 }}
-          className="absolute top-[18%] left-8 md:left-16 lg:left-32 text-primary/60 text-base md:text-lg font-light italic max-w-[180px] md:max-w-[240px]"
+          className="absolute top-[6%] left-3 md:top-[15%] md:left-16 lg:left-32 text-primary/60 text-[11px] md:text-base lg:text-lg font-light italic max-w-[80px] md:max-w-[180px] lg:max-w-[240px]"
         >
           &ldquo;{about.floating.quote}&rdquo;
         </motion.p>
 
         <motion.p
           style={{ y: floatY2 }}
-          className="absolute top-[25%] right-8 md:right-16 lg:right-32 text-primary/60 text-base md:text-lg font-light max-w-[180px] md:max-w-[240px] text-right"
+          className="absolute top-[6%] right-3 md:top-[20%] md:right-16 lg:right-32 text-primary/60 text-[11px] md:text-base lg:text-lg font-light max-w-[80px] md:max-w-[180px] lg:max-w-[240px] text-right"
         >
           {about.floating.statTop}
           <br />
@@ -161,14 +161,14 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
         <motion.p
           style={{ y: floatY3 }}
-          className="absolute bottom-[22%] left-12 md:left-24 lg:left-40 text-primary/60 text-sm md:text-base tracking-widest uppercase"
+          className="absolute bottom-[14%] left-3 md:bottom-[22%] md:left-24 lg:left-40 text-primary/60 text-[10px] md:text-sm lg:text-base tracking-widest uppercase"
         >
           {about.floating.tag1}
         </motion.p>
 
         <motion.p
           style={{ y: floatY1 }}
-          className="absolute bottom-[28%] right-12 md:right-24 lg:right-40 text-primary/60 text-sm md:text-base tracking-widest uppercase"
+          className="absolute bottom-[18%] right-3 md:bottom-[28%] md:right-24 lg:right-40 text-primary/60 text-[10px] md:text-sm lg:text-base tracking-widest uppercase"
         >
           {about.floating.tag2}
         </motion.p>

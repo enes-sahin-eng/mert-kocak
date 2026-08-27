@@ -246,7 +246,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center"
+            className="fixed inset-0 z-[110] flex items-center justify-center"
             onClick={closeVideo}
           >
             {/* Backdrop */}
