@@ -53,10 +53,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           {/* Top section */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             {/* Left text */}
-            <motion.div
-              style={{ opacity }}
-              className="max-w-xs"
-            >
+            <motion.div style={{ opacity }} className="max-w-xs">
               <p className="text-primary/60 text-sm leading-relaxed font-light italic">
                 Zihinsel sağlık
                 <br />
@@ -67,10 +64,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             </motion.div>
 
             {/* Social links */}
-            <motion.div
-              style={{ opacity }}
-              className="text-right"
-            >
+            <motion.div style={{ opacity }} className="text-right">
               <p className="text-primary/60 text-xs tracking-widest uppercase mb-4">
                 Sosyal Medya
               </p>
@@ -202,12 +196,11 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             </p>
 
             <p className="text-primary/50 text-xs text-center max-w-md">
-              Klinik Psikolog olarak bireysel ve çift terapisi hizmetleri sunuyorum.
+              Klinik Psikolog olarak bireysel ve çift terapisi hizmetleri
+              sunuyorum.
             </p>
 
-            <p className="text-primary/60 text-sm">
-              Tüm hakları saklıdır.
-            </p>
+            <p className="text-primary/60 text-sm">Tüm hakları saklıdır.</p>
           </motion.div>
         </div>
       </div>
@@ -232,10 +225,10 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
 
       {/* Designer Badge */}
       <div className="w-full bg-[#0d1d2b] py-3 flex justify-center items-center">
-        <a 
-          href="https://ideazone.com.tr" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://ideazone.digital/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity group"
           aria-label="Design and Development by ideaZone DIGITAL"
         >
@@ -243,10 +236,10 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             Design & Development By
           </span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/designer-logo-full.png" 
-            alt="ideaZone DIGITAL" 
-            className="h-5 md:h-6 w-auto object-contain" 
+          <img
+            src="/designer-logo-full.png"
+            alt="ideaZone DIGITAL"
+            className="h-5 md:h-6 w-auto object-contain"
           />
         </a>
       </div>
