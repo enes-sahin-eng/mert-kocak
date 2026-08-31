@@ -93,6 +93,8 @@ export interface VideosSection {
 }
 
 export interface SiteSettings {
+  /** Menüdeki logo. Boşsa koddaki varsayılan (/logo.png) kullanılır. */
+  logo: string | null;
   phone: string;
   phoneLink: string;
   whatsapp: string;
@@ -121,6 +123,7 @@ export interface SiteSettings {
  * Frontend tasarımının orijinal içerikleriyle birebir aynıdır.
  */
 export const defaultSettings: SiteSettings = {
+  logo: null,
   phone: "+90 501 264 84 84",
   phoneLink: "+905012648484",
   whatsapp: "905012648484",

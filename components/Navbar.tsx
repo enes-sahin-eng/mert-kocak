@@ -14,7 +14,8 @@ const navLinks = [
   { label: "İletişim", href: "#contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ logo }: { logo?: string | null }) {
+  const logoSrc = logo ?? "/logo.png";
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export default function Navbar() {
       >
         <Link href="/" className="block mt-2 hover:opacity-80 transition-opacity">
           <Image
-            src="/logo.png"
+            src={logoSrc}
             alt="Mert Koçak - Klinik Psikolog"
             width={80}
             height={80}
@@ -137,7 +138,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 px-2 py-2 bg-primary/95 backdrop-blur-md rounded-full border border-white/10 shadow-2xl">
           {/* Logo */}
           <Link href="/" className="px-3 py-1 block hover:opacity-80 transition-opacity">
-            <Image src="/logo.png" alt="Mert Koçak" width={40} height={40} className="h-10 w-auto" />
+            <Image src={logoSrc} alt="Mert Koçak" width={40} height={40} className="h-10 w-auto" />
           </Link>
 
           {/* Divider */}

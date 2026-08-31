@@ -70,7 +70,7 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(buildHomeJsonLd(settings)) }}
       />
-      <Navbar />
+      <Navbar logo={settings.logo} />
       <Hero settings={settings} />
       <About settings={settings} />
       <Therapies therapies={therapies} />

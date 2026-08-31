@@ -95,7 +95,7 @@ export default function TherapyPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(buildTherapyJsonLd(content)) }}
       />
-      <Navbar />
+      <Navbar logo={settings.logo} />
       <TherapyHero
         eyebrow={content.heroEyebrow}
         title={content.heroTitle}

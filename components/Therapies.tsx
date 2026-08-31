@@ -5,15 +5,9 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "fra
 import Link from "next/link";
 import type { Therapy } from "@/lib/therapies";
 
-// Detaylı sayfası oluşturulmuş terapiler için başlık -> sayfa yolu eşlemesi.
-const therapyDetailLinks: Record<string, string> = {
-  "Bireysel Terapi": "/bireysel-terapi",
-  "Çift Terapisi": "/evlilik-iliski-terapisi",
-  "Anksiyete Terapisi": "/kaygi-bozukluklari",
-  "Depresyon Terapisi": "/depresyon-terapisi",
-  "EMDR Terapi": "/olum-yas-terapisi",
-  "Bilişsel Davranışçı": "/ofke-stres-terapisi",
-};
+// Detay sayfası bağlantısı artık her terapi kaydında ("link") tutuluyor;
+// panelden seçilir. Önceden başlığa göre eşleniyordu, başlık değişince
+// bağlantı sessizce kayboluyordu.
 
 export default function Therapies({ therapies }: { therapies: Therapy[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -193,9 +187,9 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
                 <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-primary leading-none tracking-tight">
                   {therapies[activeIndex].title}
                 </h2>
-                {therapyDetailLinks[therapies[activeIndex].title] && (
+                {therapies[activeIndex].link && (
                   <Link
-                    href={therapyDetailLinks[therapies[activeIndex].title]}
+                    href={therapies[activeIndex].link}
                     className="group relative mt-4 md:mt-6 inline-flex items-center gap-2.5 py-1.5 pl-1.5 pr-6 rounded-full bg-primary shadow-xl shadow-black/25 hover:shadow-accent/30 transition-shadow duration-300"
                   >
                     <span className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-accent text-primary group-hover:scale-105 transition-transform duration-300">

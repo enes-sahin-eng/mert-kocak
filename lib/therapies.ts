@@ -7,6 +7,8 @@ export interface Therapy {
   description: string | null;
   details: string | null;
   image: string | null;
+  /** "Detaylı Bilgi" butonunun gideceği sayfa (ör. /bireysel-terapi). */
+  link: string | null;
 }
 
 /**
@@ -21,6 +23,7 @@ export const defaultTherapies: Therapy[] = [
     description: "İçsel yolculuğunuzda size eşlik ediyorum.",
     details: "Kendinizi tanıma ve potansiyelinizi keşfetme.",
     image: null,
+    link: "/bireysel-terapi",
   },
   {
     id: 2,
@@ -29,6 +32,7 @@ export const defaultTherapies: Therapy[] = [
     description: "İlişkilerinizi güçlendirin ve derinleştirin.",
     details: "Sağlıklı iletişim kalıpları oluşturma.",
     image: null,
+    link: "/evlilik-iliski-terapisi",
   },
   {
     id: 3,
@@ -37,6 +41,7 @@ export const defaultTherapies: Therapy[] = [
     description: "Geçmişin izlerini dönüştürün.",
     details: "Bilimsel olarak kanıtlanmış travma tedavisi.",
     image: null,
+    link: "/olum-yas-terapisi",
   },
   {
     id: 4,
@@ -45,6 +50,7 @@ export const defaultTherapies: Therapy[] = [
     description: "Düşünce kalıplarınızı dönüştürün.",
     details: "Davranış değişikliği için etkili stratejiler.",
     image: null,
+    link: "/ofke-stres-terapisi",
   },
   {
     id: 5,
@@ -53,6 +59,7 @@ export const defaultTherapies: Therapy[] = [
     description: "Kaygıyla başa çıkma stratejileri.",
     details: "Panik atak ve sosyal fobi tedavisi.",
     image: null,
+    link: "/kaygi-bozukluklari",
   },
   {
     id: 6,
@@ -61,6 +68,7 @@ export const defaultTherapies: Therapy[] = [
     description: "Karanlıktan aydınlığa çıkış yolu.",
     details: "Umut ve iyileşme odaklı yaklaşım.",
     image: null,
+    link: "/depresyon-terapisi",
   },
 ];
 
