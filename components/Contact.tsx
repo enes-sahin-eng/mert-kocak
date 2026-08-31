@@ -41,6 +41,7 @@ const buildContactMethods = (settings: SiteSettings) => [
     label: "Telefon",
     value: settings.phone,
     href: `tel:${settings.phoneLink}`,
+    trackAs: "phone_click" as const,
   },
   {
     icon: (
@@ -303,6 +304,9 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                 <motion.a
                   key={method.label}
                   href={method.href}
+                  onClick={() => {
+                    if (method.trackAs) track(method.trackAs, "contact_section");
+                  }}
                   target={method.external ? "_blank" : undefined}
                   rel={method.external ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 20 }}

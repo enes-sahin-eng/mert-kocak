@@ -1,11 +1,9 @@
 import { API_BASE_URL } from "@/lib/api";
 import { captureAttribution } from "@/lib/contact";
 
-// GEÇİCİ NOT: Sayfada artık bir "Telefon Et" butonu da var (bkz. FloatingActions.tsx)
-// ama backend bu event tipini henüz tanımıyor. Backend'e "phone_click" eklenirse
-// burada da tipe eklenip FloatingActions.tsx'teki telefon linkine track() çağrısı bağlanabilir.
 export type TrackEvent =
   | "whatsapp_click"
+  | "phone_click"
   | "info_cta_click"
   | "contact_form_submit";
 

@@ -144,10 +144,10 @@ export default function FloatingActions({ settings }: { settings: SiteSettings }
           isBlogPost ? "bottom-28" : "bottom-8"
         }`}
       >
-        {/* Telefon Et button. backend'de "phone_click" event tipi eklenirse
-            track("phone_click", "floating") burada da çağrılabilir (bkz. lib/tracking.ts). */}
+        {/* Telefon Et button */}
         <motion.a
           href={phoneHref}
+          onClick={() => track("phone_click", "floating")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Telefon Et"
