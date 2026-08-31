@@ -176,16 +176,14 @@ export const defaultSettings: SiteSettings = {
  * Hata durumunda varsayılanlara düşer (site asla kırılmaz).
  */
 export async function getSettings(): Promise<SiteSettings> {
-  // GEÇİCİ: backend fetch devre dışı, elle girilen defaultSettings kullanılıyor.
-  return defaultSettings;
-  // try {
-  //   const res = await fetch(`${API_BASE_URL}/api/settings`, {
-  //     cache: "no-store",
-  //   });
-  //   if (!res.ok) return defaultSettings;
-  //   const json = (await res.json()) as { data: SiteSettings };
-  //   return json.data ?? defaultSettings;
-  // } catch {
-  //   return defaultSettings;
-  // }
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/settings`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return defaultSettings;
+    const json = (await res.json()) as { data: SiteSettings };
+    return json.data ?? defaultSettings;
+  } catch {
+    return defaultSettings;
+  }
 }

@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
 import TherapyPage from "@/components/therapy/TherapyPage";
 import { kaygiBozukluklariContent } from "@/lib/therapy/kaygi-bozukluklari";
+import { getTherapyPageContent } from "@/lib/therapyPage";
 import { getSettings } from "@/lib/settings";
 
-export const metadata: Metadata = {
-  title: kaygiBozukluklariContent.metaTitle,
-  description: kaygiBozukluklariContent.metaDescription,
-  alternates: { canonical: `/${kaygiBozukluklariContent.slug}` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getTherapyPageContent(
+    kaygiBozukluklariContent.slug,
+    kaygiBozukluklariContent,
+  );
+  return {
+    title: content.metaTitle,
+    description: content.metaDescription,
+    alternates: { canonical: `/${content.slug}` },
+  };
+}
 
 export default async function KaygiBozukluklariPage() {
-  const settings = await getSettings();
-  return <TherapyPage content={kaygiBozukluklariContent} settings={settings} />;
+  const [content, settings] = await Promise.all([
+    getTherapyPageContent(kaygiBozukluklariContent.slug, kaygiBozukluklariContent),
+    getSettings(),
+  ]);
+  return <TherapyPage content={content} settings={settings} />;
 }
