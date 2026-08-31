@@ -2,33 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
-interface Video {
-  id: string;
-  title: string;
-}
-
-const videos: Video[] = [
-  {
-    id: "7d7fDg15Gnc",
-    title:
-      "İlişki Bitmeden Bağ Biter Mi? — Aldatma ve Aldatılma Serisi, Bölüm 6",
-  },
-  {
-    id: "zP7T42oz-sQ",
-    title: "Aldatma Bir Kaçış Mı? — Aldatma ve Aldatılma Serisi, Bölüm 7",
-  },
-  {
-    id: "pW2K6Sa9OXQ",
-    title:
-      "Aldatmayı Kimden Öğreniyoruz? — Aldatma ve Aldatılma Serisi, Bölüm 8",
-  },
-  { id: "VPLnuuGYF9Q", title: "Aldatanlar Aslında Ne Arıyor?" },
-  {
-    id: "nIRAsfai-ag",
-    title: "İletişimsizlik Aldatmaya Nasıl Zemin Hazırlar?",
-  },
-];
+import type { Video } from "@/lib/videos";
+import type { VideosSection } from "@/lib/settings";
 
 function VideoModal({ video, onClose }: { video: Video; onClose: () => void }) {
   useEffect(() => {
@@ -112,7 +87,13 @@ function VideoThumb({ video, onOpen }: { video: Video; onOpen: () => void }) {
   );
 }
 
-export default function VideoStories() {
+export default function VideoStories({
+  videos,
+  section,
+}: {
+  videos: Video[];
+  section: VideosSection;
+}) {
   const [openVideo, setOpenVideo] = useState<Video | null>(null);
 
   return (
@@ -126,14 +107,13 @@ export default function VideoStories() {
           className="text-center mb-10 md:mb-14"
         >
           <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">
-            Video İçerikler
+            {section.eyebrow}
           </p>
           <h2 className="text-3xl md:text-5xl font-serif text-white">
-            İzle, Keşfet, Dönüş
+            {section.title}
           </h2>
           <p className="mt-4 text-white/60 text-sm md:text-base max-w-xl mx-auto">
-            İlişkiler, kaygı, depresyon ve daha fazlası — aklınıza takılan
-            soruları tek tek yanıtlıyorum.
+            {section.description}
           </p>
         </motion.div>
 

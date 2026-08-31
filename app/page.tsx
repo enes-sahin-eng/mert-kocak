@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import { getSettings, type SiteSettings } from "@/lib/settings";
 import { getTherapies } from "@/lib/therapies";
 import { getTestimonials } from "@/lib/testimonials";
+import { getVideos } from "@/lib/videos";
 import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
 
 function buildHomeJsonLd(settings: SiteSettings) {
@@ -56,10 +57,11 @@ function buildHomeJsonLd(settings: SiteSettings) {
 }
 
 export default async function Home() {
-  const [settings, therapies, testimonials] = await Promise.all([
+  const [settings, therapies, testimonials, videos] = await Promise.all([
     getSettings(),
     getTherapies(),
     getTestimonials(),
+    getVideos(),
   ]);
 
   return (
@@ -73,7 +75,7 @@ export default async function Home() {
       <About settings={settings} />
       <Therapies therapies={therapies} />
       <Testimonials testimonials={testimonials} settings={settings} />
-      <VideoStories />
+      <VideoStories videos={videos} section={settings.videos} />
       <Contact settings={settings} />
     </main>
   );

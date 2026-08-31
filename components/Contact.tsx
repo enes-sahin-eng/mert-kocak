@@ -278,14 +278,14 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
           className="text-center mb-16 md:mb-24"
         >
           <p className="text-accent-ink text-sm tracking-[0.3em] uppercase mb-4">
-            İletişim
+            {settings.contact.eyebrow}
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary mb-6">
-            Birlikte <span className="italic">Başlayalım</span>
+            {settings.contact.title}{" "}
+            <span className="italic">{settings.contact.titleAccent}</span>
           </h2>
           <p className="text-primary/60 text-lg max-w-2xl mx-auto">
-            İlk adımı atmak için buradayım. Sorularınız için bana ulaşın veya
-            hemen randevu alın.
+            {settings.contact.description}
           </p>
         </motion.div>
 
@@ -342,21 +342,22 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
               ))}
             </div>
 
-            {/* Harita gömülü görünümü.
-                GEÇİCİ: iframe adresi burada sabit (hardcoded). Backend'e "mapEmbedUrl"
-                gibi bir alan eklenip settings.mapEmbedUrl üzerinden yönetilmesi gerekiyor. */}
-            <div className="mb-12 rounded-2xl overflow-hidden border border-primary/5">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.6493059027143!2d29.025567700000007!3d41.0766578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7699a3424e3%3A0xda1f401ab1c7792f!2s%C4%B0stanbul%20Etiler%20Psikoloji%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Merkezi%20-%20Uzm.%20Klinik%20Psikolog%20Mert%20Ko%C3%A7ak!5e0!3m2!1str!2str!4v1787656287270!5m2!1str!2str"
-                width="600"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                className="w-full h-[170px]"
-              />
-            </div>
+            {/* Harita gömülü görünümü (panelden: Site Ayarları → Gömülü harita adresi) */}
+            {settings.mapEmbedUrl && (
+              <div className="mb-12 rounded-2xl overflow-hidden border border-primary/5">
+                <iframe
+                  src={settings.mapEmbedUrl}
+                  title="Ofis konumu"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="w-full h-[170px]"
+                />
+              </div>
+            )}
 
             {/* Working hours */}
             <motion.div
@@ -381,21 +382,15 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
-                Çalışma Saatleri
+                {settings.contact.workingHoursHeading}
               </h3>
               <div className="space-y-2 text-white/70">
-                <div className="flex justify-between">
-                  <span>Pazartesi - Cuma</span>
-                  <span className="text-accent">09:00 - 20:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Cumartesi</span>
-                  <span className="text-accent">10:00 - 16:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pazar</span>
-                  <span className="text-white/60">Kapalı</span>
-                </div>
+                {settings.contact.workingHours.map((hour) => (
+                  <div key={hour.label} className="flex justify-between">
+                    <span>{hour.label}</span>
+                    <span className="text-accent">{hour.value}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
@@ -406,7 +401,9 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <p className="text-primary/50 text-sm mb-4">Sosyal Medya</p>
+              <p className="text-primary/50 text-sm mb-4">
+                {settings.contact.socialLabel}
+              </p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -438,10 +435,10 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
           >
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-primary/5 border border-primary/5">
               <h3 className="text-2xl font-serif text-primary mb-2">
-                Mesaj Gönderin
+                {settings.contact.formHeading}
               </h3>
               <p className="text-primary/50 text-sm mb-8">
-                En kısa sürede size dönüş yapacağım.
+                {settings.contact.formDescription}
               </p>
 
               {isSubmitted ? (

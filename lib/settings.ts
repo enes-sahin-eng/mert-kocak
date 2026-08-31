@@ -69,6 +69,29 @@ export interface AuthorInfo {
   image: string | null;
 }
 
+export interface WorkingHour {
+  label: string;
+  value: string;
+}
+
+export interface ContactSection {
+  eyebrow: string | null;
+  title: string | null;
+  titleAccent: string | null;
+  description: string | null;
+  formHeading: string | null;
+  formDescription: string | null;
+  socialLabel: string | null;
+  workingHoursHeading: string | null;
+  workingHours: WorkingHour[];
+}
+
+export interface VideosSection {
+  eyebrow: string | null;
+  title: string | null;
+  description: string | null;
+}
+
 export interface SiteSettings {
   phone: string;
   phoneLink: string;
@@ -76,6 +99,8 @@ export interface SiteSettings {
   email: string;
   address: string;
   mapUrl: string;
+  /** İletişim bölümündeki gömülü haritanın iframe src adresi. */
+  mapEmbedUrl: string | null;
   social: {
     instagram: string;
     // linkedin: backend'den gelmeye devam ediyor, arayüzde şu an gösterilmiyor (YouTube ile değiştirildi).
@@ -87,6 +112,8 @@ export interface SiteSettings {
   testimonials: TestimonialsSection;
   about: AboutSettings;
   hero: HeroSettings;
+  contact: ContactSection;
+  videos: VideosSection;
 }
 
 /**
@@ -100,6 +127,8 @@ export const defaultSettings: SiteSettings = {
   email: "bilgi@mertkocak.com",
   address: "Nisbetiye, Ahmet Adnan Saygun Cd. Menekşe 1 Blok No:2 D:3, 34337 Beşiktaş/İstanbul",
   mapUrl: "https://www.google.com/maps/search/?api=1&query=%C4%B0stanbul+Etiler+Psikoloji+Dan%C4%B1%C5%9Fmanl%C4%B1k+Merkezi+Mert+Ko%C3%A7ak+Nisbetiye+Ahmet+Adnan+Saygun+Cd+Menek%C5%9Fe+1+Blok+No%3A2+D%3A3+34337+Be%C5%9Fikta%C5%9F",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.6493059027143!2d29.025567700000007!3d41.0766578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7699a3424e3%3A0xda1f401ab1c7792f!2s%C4%B0stanbul%20Etiler%20Psikoloji%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Merkezi%20-%20Uzm.%20Klinik%20Psikolog%20Mert%20Ko%C3%A7ak!5e0!3m2!1str!2str!4v1787656287270!5m2!1str!2str",
   social: {
     instagram: "https://www.instagram.com/mertkocakmusic",
     linkedin: "https://linkedin.com",
@@ -167,6 +196,28 @@ export const defaultSettings: SiteSettings = {
       videoUrl: null,
       youtube: "https://youtu.be/pW2K6Sa9OXQ?si=8ACt_tKTx8i_SgKU",
     },
+  },
+  contact: {
+    eyebrow: "İletişim",
+    title: "Birlikte",
+    titleAccent: "Başlayalım",
+    description:
+      "İlk adımı atmak için buradayım. Sorularınız için bana ulaşın veya hemen randevu alın.",
+    formHeading: "Mesaj Gönderin",
+    formDescription: "En kısa sürede size dönüş yapacağım.",
+    socialLabel: "Sosyal Medya",
+    workingHoursHeading: "Çalışma Saatleri",
+    workingHours: [
+      { label: "Pazartesi - Cuma", value: "09:00 - 20:00" },
+      { label: "Cumartesi", value: "10:00 - 16:00" },
+      { label: "Pazar", value: "Kapalı" },
+    ],
+  },
+  videos: {
+    eyebrow: "Video İçerikler",
+    title: "İzle, Keşfet, Dönüş",
+    description:
+      "İlişkiler, kaygı, depresyon ve daha fazlası — aklınıza takılan soruları tek tek yanıtlıyorum.",
   },
 };
 
