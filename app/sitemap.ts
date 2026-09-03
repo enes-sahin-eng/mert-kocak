@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // GEÇİCİ: blog CMS'i ile uyumlu olmadığı için elle eklenen bağımsız sayfalar.
     { url: absoluteUrl("/psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/istanbul-psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/etiler-psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const therapyDetailPages: MetadataRoute.Sitemap = therapyPages.map((content) => ({
