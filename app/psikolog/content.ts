@@ -187,7 +187,7 @@ export const articleHtml = `
 
 <h2>Hangi konuda destek arıyorsunuz?</h2>
 
-<p>Psikolojik destek tek bir şey değil; getirdiğiniz konuya göre süreç de yöntem de değişir. Aşağıdaki tablo hangi başlığın size denk düştüğünü bulmanız için hazırlandı.</p>
+<p>Psikolojik destek tek bir yaklaşımdan ibaret değildir; getirdiğiniz konuya göre süreç ve yöntem de farklılık gösterir. Aşağıdaki tablo, ihtiyaç duyduğunuz alana daha net bir bakış sunarak ilk adımı atmanıza yardımcı olmak için hazırlanmıştır:</p>
 
 <table>
   <caption>Destek alanlarına göre yönlendirme</caption>
