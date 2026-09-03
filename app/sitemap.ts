@@ -28,8 +28,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: absoluteUrl("/blog"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
-    // GEÇİCİ: blog CMS'i ile uyumlu olmadığı için elle eklenen bağımsız sayfa (bkz. app/psikolog).
+    // GEÇİCİ: blog CMS'i ile uyumlu olmadığı için elle eklenen bağımsız sayfalar.
     { url: absoluteUrl("/psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/istanbul-psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const therapyDetailPages: MetadataRoute.Sitemap = therapyPages.map((content) => ({
