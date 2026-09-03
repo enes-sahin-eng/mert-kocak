@@ -44,17 +44,14 @@ export const faq: FaqItem[] = [
   },
 ];
 
-// GEÇİCİ NOT — bu sayfadaki linkler:
-// - bireysel-terapi, evlilik-iliski-terapisi (cift-terapisi düzeltildi),
-//   depresyon-terapisi (depresyon-tedavisi düzeltildi), kaygi-bozukluklari
-//   (anksiyete-tedavisi düzeltildi, 2 yerde), psikolog: sitede var, link kaldı.
-// - Şu an sitede olmayanlar (aile-terapisi, panik-atak-tedavisi [2 yerde],
-//   cocuk-psikologu, psikoterapi, online-terapi [2 yerde], klinik-psikolog,
-//   psikolog-randevu [2 yerde], etiler-psikolog) düz metne çevrildi —
-//   sayfalar eklenince tekrar linklenecek.
-// - "KATMAN LİNKLERİ" olarak yorumlanmış gelecekteki İstanbul+konu
-//   sayfalarına (istanbul-bireysel-terapi vb.) hiç yer verilmedi, kaynakta
-//   zaten yorum satırıydı.
+// GEÇİCİ NOT — "Hangi konuda destek arıyorsunuz?" tablosu: kullanıcı isteğiyle
+// tüm satırlar düz metne çevrildi (sitede var olanlar dahil). Diğer bölümlerdeki
+// paragraf linkleri (bireysel-terapi, evlilik-iliski-terapisi, depresyon-terapisi,
+// kaygi-bozukluklari, psikolog) sitede var, dokunulmadı. Sitede olmayan diğer
+// paragraf linkleri (aile-terapisi, panik-atak-tedavisi, cocuk-psikologu,
+// psikoterapi, online-terapi, klinik-psikolog, psikolog-randevu, etiler-psikolog)
+// düz metne çevrildi — sayfalar eklenince tekrar linklenecek. "KATMAN LİNKLERİ"
+// olarak yorumlanmış gelecekteki sayfalara hiç yer verilmedi.
 export const articleHtml = `
 <p class="lead"><strong>İstanbul'da psikolog ararken üç şey belirleyicidir: uzmanın unvanı ve klinik eğitimi, çalışma alanının sizin konunuzla örtüşmesi ve seansa düzenli gelebileceğiniz bir ulaşım mesafesi. Bu şehirde üçüncü madde sanıldığından çok daha kritiktir; terapide sonucu belirleyen en güçlü değişken devamlılıktır ve İstanbul'da devamlılığı en çok yol kırar.</strong></p>
 
@@ -129,11 +126,11 @@ export const articleHtml = `
     <tr><th>Konu</th><th>Ne zaman bu başlıkla başlanır</th></tr>
   </thead>
   <tbody>
-    <tr><td><a href="/bireysel-terapi">Bireysel terapi</a></td><td>Zorlanma ağırlıkla kişinin kendi iç dünyasındaysa</td></tr>
-    <tr><td><a href="/evlilik-iliski-terapisi">Çift terapisi</a></td><td>Sorun iki yetişkin arasındaki ilişkideyse</td></tr>
+    <tr><td>Bireysel terapi</td><td>Zorlanma ağırlıkla kişinin kendi iç dünyasındaysa</td></tr>
+    <tr><td>Çift terapisi</td><td>Sorun iki yetişkin arasındaki ilişkideyse</td></tr>
     <tr><td>Aile terapisi</td><td>Hane düzeni, ebeveynlik veya kuşaklar arası çatışma varsa</td></tr>
-    <tr><td><a href="/depresyon-terapisi">Depresyon tedavisi</a></td><td>Enerji, ilgi ve işlevsellik belirgin biçimde düştüyse</td></tr>
-    <tr><td><a href="/kaygi-bozukluklari">Anksiyete tedavisi</a></td><td>Kaygı hayat alanını daraltmaya başladıysa</td></tr>
+    <tr><td>Depresyon tedavisi</td><td>Enerji, ilgi ve işlevsellik belirgin biçimde düştüyse</td></tr>
+    <tr><td>Anksiyete tedavisi</td><td>Kaygı hayat alanını daraltmaya başladıysa</td></tr>
     <tr><td>Panik atak tedavisi</td><td>Ataklar tekrarlıyor ve yeni atak korkusu yerleştiyse</td></tr>
     <tr><td>Çocuk psikoloğu</td><td>Çocuk veya ergende süreklilik gösteren bir zorlanma varsa</td></tr>
     <tr><td>Terapi nedir, nasıl işler</td><td>Süreci ve ekolleri genel olarak anlamak istiyorsanız</td></tr>

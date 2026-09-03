@@ -53,17 +53,11 @@ export const faq: PsikologFaqItem[] = [
   },
 ];
 
-// GEÇİCİ NOT — "Hangi konuda destek arıyorsunuz?" tablosundaki linkler:
-// - bireysel-terapi, evlilik-iliski-terapisi, depresyon-terapisi,
-//   kaygi-bozukluklari, ofke-stres-terapisi, olum-yas-terapisi: sitede var,
-//   link olarak bırakıldı (cift-terapisi/anksiyete-tedavisi/depresyon-tedavisi
-//   sitedeki gerçek adreslere düzeltildi).
-// - istanbul-psikolog: sayfa henüz yok ama kullanıcı isteğiyle bilerek link
-//   olarak bırakıldı.
-// - Şu an sitede hiç olmayan diğerleri (terapi nedir/psikoterapi, klinik
-//   psikolog, aile terapisi, panik atak, çocuk psikoloğu, bağımlılık terapisi,
-//   cinsel terapi, online terapi) düz metne çevrildi — bu sayfalar ileride
-//   eklenince buraya tekrar link olarak bağlanacak.
+// GEÇİCİ NOT — "Hangi konuda destek arıyorsunuz?" tablosu: kullanıcı isteğiyle
+// tüm satırlar düz metne çevrildi (sitede var olanlar dahil — bireysel-terapi,
+// evlilik-iliski-terapisi, depresyon-terapisi, kaygi-bozukluklari,
+// ofke-stres-terapisi, olum-yas-terapisi, istanbul-psikolog). Tablo dışındaki
+// paragraf linklerine dokunulmadı.
 export const articleHtml = `
 <p class="lead"><strong>Psikolog, insan davranışını, düşünceyi ve duyguyu bilimsel yöntemlerle inceleyen ve psikoloji lisans eğitimini tamamlamış ruh sağlığı uzmanıdır. Terapi yetkinliği için lisansüstü klinik eğitim gerekir. Psikolog ilaç yazmaz; konuşmaya dayalı psikoterapi yürütür ve gerektiğinde psikiyatriste yönlendirir.</strong></p>
 
@@ -197,19 +191,19 @@ export const articleHtml = `
   <tbody>
     <tr><td>Terapi nedir, nasıl işler</td><td>Süreci hiç bilmiyorsunuz, nereden başlayacağınıza karar veremiyorsunuz</td></tr>
     <tr><td>Klinik psikolog ve psikoterapist farkı</td><td>Unvanlar karışıyor, kimin yetkili olduğunu bilmek istiyorsunuz</td></tr>
-    <tr><td><a href="/bireysel-terapi">Bireysel terapi</a></td><td>Tek başınıza, kendi örüntüleriniz üzerine çalışmak istiyorsunuz</td></tr>
-    <tr><td><a href="/evlilik-iliski-terapisi">Çift terapisi ve evlilik terapisi</a></td><td>Aynı tartışma tekrar ediyor, iletişim tıkanmış durumda</td></tr>
+    <tr><td>Bireysel terapi</td><td>Tek başınıza, kendi örüntüleriniz üzerine çalışmak istiyorsunuz</td></tr>
+    <tr><td>Çift terapisi ve evlilik terapisi</td><td>Aynı tartışma tekrar ediyor, iletişim tıkanmış durumda</td></tr>
     <tr><td>Aile terapisi</td><td>Sorun iki kişiden fazlasını kapsıyor, aile içi denge bozulmuş</td></tr>
-    <tr><td><a href="/depresyon-terapisi">Depresyon tedavisi</a></td><td>İsteksizlik, yorgunluk ve keyifsizlik haftalardır sürüyor</td></tr>
-    <tr><td><a href="/kaygi-bozukluklari">Kaygı bozukluğu ve anksiyete tedavisi</a></td><td>Sürekli endişe hayatınızı daraltıyor</td></tr>
+    <tr><td>Depresyon tedavisi</td><td>İsteksizlik, yorgunluk ve keyifsizlik haftalardır sürüyor</td></tr>
+    <tr><td>Kaygı bozukluğu ve anksiyete tedavisi</td><td>Sürekli endişe hayatınızı daraltıyor</td></tr>
     <tr><td>Panik atak tedavisi</td><td>Ani gelen yoğun korku nöbetleri yaşıyorsunuz</td></tr>
-    <tr><td><a href="/ofke-stres-terapisi">Öfke ve stres terapisi</a></td><td>Tepkileriniz kontrolünüzden çıkıyor ya da tükenmiş hissediyorsunuz</td></tr>
-    <tr><td><a href="/olum-yas-terapisi">Ölüm ve yas terapisi</a></td><td>Bir kayıptan sonra toparlanamıyorsunuz</td></tr>
+    <tr><td>Öfke ve stres terapisi</td><td>Tepkileriniz kontrolünüzden çıkıyor ya da tükenmiş hissediyorsunuz</td></tr>
+    <tr><td>Ölüm ve yas terapisi</td><td>Bir kayıptan sonra toparlanamıyorsunuz</td></tr>
     <tr><td>Çocuk psikoloğu</td><td>Çocuğunuzun davranışlarında sizi endişelendiren bir değişim var</td></tr>
     <tr><td>Bağımlılık terapisi</td><td>Bir madde veya davranış üzerindeki kontrolünüzü kaybettiğinizi düşünüyorsunuz</td></tr>
     <tr><td>Cinsel terapi</td><td>Cinsel yaşamınızda sizi zorlayan bir sorun var</td></tr>
     <tr><td>Online terapi</td><td>Ulaşım, saat veya mahremiyet nedeniyle uzaktan görüşmeyi tercih ediyorsunuz</td></tr>
-    <tr><td><a href="/istanbul-psikolog">İstanbul psikolog</a></td><td>İstanbul'da ulaşabileceğiniz bir uzman arıyorsunuz</td></tr>
+    <tr><td>İstanbul psikolog</td><td>İstanbul'da ulaşabileceğiniz bir uzman arıyorsunuz</td></tr>
   </tbody>
 </table>
 

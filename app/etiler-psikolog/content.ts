@@ -44,17 +44,15 @@ export const faq: FaqItem[] = [
   },
 ];
 
-// GEÇİCİ NOT — bu sayfadaki linkler:
-// - bireysel-terapi, evlilik-iliski-terapisi (cift-terapisi düzeltildi),
-//   depresyon-terapisi (depresyon-tedavisi düzeltildi), kaygi-bozukluklari
-//   (anksiyete-tedavisi düzeltildi), psikolog, istanbul-psikolog (2 yerde):
-//   sitede var, link kaldı.
-// - Şu an sitede olmayanlar (aile-terapisi, panik-atak-tedavisi,
-//   cocuk-psikologu, psikoterapi, klinik-psikolog, online-terapi,
-//   psikolog-randevu) düz metne çevrildi — sayfalar eklenince tekrar
-//   linklenecek.
-// - "KATMAN LİNKLERİ" olarak yorumlanmış gelecekteki Etiler+konu
-//   sayfalarına hiç yer verilmedi, kaynakta zaten yorum satırıydı.
+// GEÇİCİ NOT — "Etiler psikolog olarak hangi konularda çalışıyorum?" tablosu:
+// kullanıcı isteğiyle tüm satırlar düz metne çevrildi (sitede var olanlar
+// dahil). Diğer bölümlerdeki paragraf linkleri (bireysel-terapi,
+// evlilik-iliski-terapisi, depresyon-terapisi, kaygi-bozukluklari, psikolog,
+// istanbul-psikolog) sitede var, dokunulmadı. Sitede olmayan diğer paragraf
+// linkleri (aile-terapisi, panik-atak-tedavisi, cocuk-psikologu, psikoterapi,
+// klinik-psikolog, online-terapi, psikolog-randevu) düz metne çevrildi —
+// sayfalar eklenince tekrar linklenecek. "KATMAN LİNKLERİ" olarak
+// yorumlanmış gelecekteki sayfalara hiç yer verilmedi.
 export const articleHtml = `
 <p class="lead"><strong>Etiler psikolog arayanlar için klinik, İstanbul Beşiktaş Etiler'de Nisbetiye Caddesi hattında bulunuyor. Kliniğe en yakın metro durakları M6 hattındaki Nispetiye ve Etiler; şehrin diğer bölgelerinden gelenler Levent'te M2 hattından aktarma yapıyor. Hafta içi 09.00-20.00, cumartesi 10.00-16.00 arasında yüz yüze seans veriliyor.</strong></p>
 
@@ -136,11 +134,11 @@ export const articleHtml = `
     <tr><th>Konu</th><th>Ne zaman bu başlıkla başlanır</th></tr>
   </thead>
   <tbody>
-    <tr><td><a href="/bireysel-terapi">Bireysel terapi</a></td><td>Zorlanma ağırlıkla kişinin kendi iç dünyasındaysa</td></tr>
-    <tr><td><a href="/evlilik-iliski-terapisi">Çift terapisi</a></td><td>Sorun iki yetişkin arasındaki ilişkideyse</td></tr>
+    <tr><td>Bireysel terapi</td><td>Zorlanma ağırlıkla kişinin kendi iç dünyasındaysa</td></tr>
+    <tr><td>Çift terapisi</td><td>Sorun iki yetişkin arasındaki ilişkideyse</td></tr>
     <tr><td>Aile terapisi</td><td>Hane düzeni, ebeveynlik veya kuşaklar arası çatışma varsa</td></tr>
-    <tr><td><a href="/depresyon-terapisi">Depresyon tedavisi</a></td><td>Enerji, ilgi ve işlevsellik belirgin biçimde düştüyse</td></tr>
-    <tr><td><a href="/kaygi-bozukluklari">Anksiyete tedavisi</a></td><td>Kaygı hayat alanını daraltmaya başladıysa</td></tr>
+    <tr><td>Depresyon tedavisi</td><td>Enerji, ilgi ve işlevsellik belirgin biçimde düştüyse</td></tr>
+    <tr><td>Anksiyete tedavisi</td><td>Kaygı hayat alanını daraltmaya başladıysa</td></tr>
     <tr><td>Panik atak tedavisi</td><td>Ataklar tekrarlıyor ve yeni atak korkusu yerleştiyse</td></tr>
     <tr><td>Çocuk psikoloğu</td><td>Çocuk veya ergende süreklilik gösteren bir zorlanma varsa</td></tr>
   </tbody>
