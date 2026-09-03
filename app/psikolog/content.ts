@@ -145,7 +145,7 @@ export const articleHtml = `
 
 <h2>İyi bir psikolog nasıl seçilir?</h2>
 
-<p>Doğru uzmanı seçmek, sürecin en belirleyici adımlarından biri. Psikoterapi literatüründe <em>terapötik ittifak</em> olarak adlandırılan danışan–terapist iş birliğinin, sonuçla tutarlı biçimde ilişkili bulunduğu bildirilmektedir (bkz. Amerikan Psikoloji Derneği'nin psikoterapi etkililiği kararı, kaynakçada). Kısacası kendinizi o kişiyle güvende hissetmeniz, seçilen teknik kadar önemlidir. Karar verirken bakılacak sekiz kriter:</p>
+<p>Doğru uzmanı seçmek, sürecin en belirleyici adımlarından biri. Psikoterapi literatüründe <em>terapötik ittifak</em> olarak adlandırılan danışan–terapist iş birliğinin, sonuçla tutarlı biçimde ilişkili bulunduğu bildirilmektedir. Kısacası kendinizi o kişiyle güvende hissetmeniz, seçilen teknik kadar önemlidir. Karar verirken bakılacak sekiz kriter:</p>
 
 <ol>
   <li><strong>Unvan ve eğitim.</strong> Terapi yürüten kişinin klinik alanda lisansüstü eğitimi var mı? Sormaktan çekinmeyin; bu bilgi paylaşılması gereken bir bilgidir.</li>
