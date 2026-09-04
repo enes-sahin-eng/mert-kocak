@@ -129,6 +129,8 @@ export default async function EtilerPsikologPage() {
               [&_table_caption]:caption-top [&_table_caption]:text-left [&_table_caption]:mb-3
               [&_table_caption]:text-primary/60 [&_table_caption]:text-base [&_table_caption]:font-medium
               [&_table_caption]:not-italic
+              [&_table]:table-fixed [&_table]:w-full [&_table]:max-w-full
+              [&_td]:break-words [&_th]:break-words
             "
             dangerouslySetInnerHTML={{ __html: articleHtml }}
           />
