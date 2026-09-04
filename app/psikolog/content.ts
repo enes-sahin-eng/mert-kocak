@@ -1,5 +1,7 @@
-// GEÇİCİ: Bu sayfa blog CMS'i (Post modeli) ile uyumlu olmadığı için ayrı,
-// bağımsız bir sayfa olarak elle oluşturuldu. Panelden yönetilmiyor.
+// Bu sayfa blog CMS'i (Post modeli) ile uyumlu olmadığı için ayrı, bağımsız
+// bir sayfa olarak elle oluşturuldu. Buradaki değerler `page.tsx`'te backend
+// "SEO Sayfaları" panelinden (slug: psikolog) çekilen içerik yoksa kullanılan
+// YEDEK (fallback) içeriktir — panelde bu slug'a kayıt eklenirse orası önceliklidir.
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 

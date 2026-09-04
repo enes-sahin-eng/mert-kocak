@@ -1,5 +1,7 @@
-// GEÇİCİ: /psikolog sayfasıyla aynı sebepten (blog CMS'i ile uyumsuz)
-// elle oluşturuldu. Panelden yönetilmiyor.
+// /psikolog sayfasıyla aynı sebepten (blog CMS'i ile uyumsuz) elle
+// oluşturuldu. Buradaki değerler `page.tsx`'te backend "SEO Sayfaları"
+// panelinden (slug: istanbul-psikolog) çekilen içerik yoksa kullanılan
+// YEDEK (fallback) içeriktir — panelde bu slug'a kayıt eklenirse orası önceliklidir.
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 

@@ -4,6 +4,7 @@ import Contact from "@/components/Contact";
 import TherapyFaq from "@/components/therapy/TherapyFaq";
 import { getSettings } from "@/lib/settings";
 import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
+import { getSeoPageContent, type SeoPageContent } from "@/lib/seoPage";
 import {
   articleHtml,
   breadcrumbLabel,
@@ -14,33 +15,50 @@ import {
   metaTitle,
 } from "./content";
 
-// GEÇİCİ: /psikolog sayfasıyla aynı sebepten (blog CMS'i ile uyumsuz)
-// elle yazılmış bağımsız bir sayfa (bkz. ./content.ts). Panelden yönetilmiyor.
+// /psikolog sayfasıyla aynı sebepten (blog CMS'i ile uyumsuz) elle yazılmış
+// bağımsız bir sayfa (bkz. ./content.ts). Panelden "SEO Sayfaları"
+// bölümünden bu slug'a (istanbul-psikolog) bir kayıt eklenirse oradaki
+// içerik burayı geçersiz kılar; kayıt yoksa aşağıdaki `fallback` kullanılır.
 
 const PAGE_SLUG = "istanbul-psikolog";
 
-export const metadata: Metadata = {
-  // absolute: sitenin genel "%s | Mert Koçak" şablonunu bu sayfada devre
-  // dışı bırakır, çünkü verilen başlık zaten sonunda "Mert Koçak" içeriyor.
-  title: { absolute: metaTitle },
-  description: metaDescription,
-  alternates: { canonical: `/${PAGE_SLUG}` },
-  openGraph: {
-    type: "article",
-    title: heroTitle,
-    description: metaDescription,
-    url: absoluteUrl(`/${PAGE_SLUG}`),
-    siteName: SITE_NAME,
-    locale: "tr_TR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: heroTitle,
-    description: metaDescription,
-  },
+const fallback: SeoPageContent = {
+  slug: PAGE_SLUG,
+  metaTitle,
+  metaDescription,
+  heroEyebrow,
+  heroTitle,
+  breadcrumbLabel,
+  articleHtml,
+  faq,
 };
 
-function buildJsonLd() {
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getSeoPageContent(PAGE_SLUG, fallback);
+
+  return {
+    // absolute: sitenin genel "%s | Mert Koçak" şablonunu bu sayfada devre
+    // dışı bırakır, çünkü verilen başlık marka eki içermiyor.
+    title: { absolute: content.metaTitle },
+    description: content.metaDescription,
+    alternates: { canonical: `/${PAGE_SLUG}` },
+    openGraph: {
+      type: "article",
+      title: content.heroTitle,
+      description: content.metaDescription,
+      url: absoluteUrl(`/${PAGE_SLUG}`),
+      siteName: SITE_NAME,
+      locale: "tr_TR",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.heroTitle,
+      description: content.metaDescription,
+    },
+  };
+}
+
+function buildJsonLd(content: SeoPageContent) {
   const pageUrl = absoluteUrl(`/${PAGE_SLUG}`);
 
   return {
@@ -50,8 +68,8 @@ function buildJsonLd() {
         "@type": "MedicalWebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: heroTitle,
-        description: metaDescription,
+        name: content.heroTitle,
+        description: content.metaDescription,
         inLanguage: "tr-TR",
         isPartOf: { "@id": absoluteUrl("/#website") },
         author: { "@id": absoluteUrl("/#person") },
@@ -64,14 +82,14 @@ function buildJsonLd() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: absoluteUrl("/") },
           { "@type": "ListItem", position: 2, name: "Psikolog", item: absoluteUrl("/psikolog") },
-          { "@type": "ListItem", position: 3, name: breadcrumbLabel, item: pageUrl },
+          { "@type": "ListItem", position: 3, name: content.breadcrumbLabel, item: pageUrl },
         ],
       },
       {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
         inLanguage: "tr-TR",
-        mainEntity: faq.map((item) => ({
+        mainEntity: content.faq.map((item) => ({
           "@type": "Question",
           name: item.question,
           acceptedAnswer: { "@type": "Answer", text: item.answer },
@@ -82,23 +100,26 @@ function buildJsonLd() {
 }
 
 export default async function IstanbulPsikologPage() {
-  const settings = await getSettings();
+  const [content, settings] = await Promise.all([
+    getSeoPageContent(PAGE_SLUG, fallback),
+    getSettings(),
+  ]);
 
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdScript(buildJsonLd()) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(buildJsonLd(content)) }}
       />
       <Navbar logo={settings.logo} />
 
       <section className="bg-primary px-6 md:px-8 pt-40 pb-20 md:pt-48 md:pb-28">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-accent text-xs md:text-sm tracking-[0.3em] uppercase mb-5">
-            {heroEyebrow}
+            {content.heroEyebrow}
           </p>
           <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight">
-            {heroTitle}
+            {content.heroTitle}
           </h1>
         </div>
       </section>
@@ -128,12 +149,12 @@ export default async function IstanbulPsikologPage() {
               [&_table]:table-fixed [&_table]:w-full [&_table]:max-w-full
               [&_td]:break-words [&_th]:break-words
             "
-            dangerouslySetInnerHTML={{ __html: articleHtml }}
+            dangerouslySetInnerHTML={{ __html: content.articleHtml }}
           />
         </div>
       </section>
 
-      <TherapyFaq items={faq} />
+      <TherapyFaq items={content.faq} />
 
       <Contact settings={settings} />
     </main>

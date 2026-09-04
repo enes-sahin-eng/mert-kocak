@@ -1,11 +1,13 @@
-// GEÇİCİ: /psikolog ve /istanbul-psikolog sayfalarıyla aynı sebepten
-// (blog CMS'i ile uyumsuz) elle oluşturuldu. Panelden yönetilmiyor.
+// /psikolog ve /istanbul-psikolog sayfalarıyla aynı sebepten (blog CMS'i ile
+// uyumsuz) elle oluşturuldu. Buradaki değerler `page.tsx`'te backend "SEO
+// Sayfaları" panelinden (slug: etiler-psikolog) çekilen içerik yoksa
+// kullanılan YEDEK (fallback) içeriktir — panelde bu slug'a kayıt eklenirse orası önceliklidir.
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 
 export const metaTitle = "Etiler Psikolog ve Terapi Merkezi";
 export const metaDescription =
-  "Etiler psikolog kliniği Nisbetiye Caddesi hattında. Metroyla ulaşım, seans saatleri, ücret aralığı ve çalışılan konular. Klinik Psk. Mert Koçak.";
+  "Etiler Psikolog Kliniği, Nispetiye Mahallesi, Ahmet Adnan Saygun Caddesi no 8a Beşiktaş, İstanbul adresinde bulunmaktadır. Etiler'de, uzman psikolog Mert Koçak ile içsel denge ve yaşam kaliteniz için profesyonel destek alın.";
 
 export const heroEyebrow = "Rehber";
 export const heroTitle = "Etiler Psikolog: Terapi Merkezi, Ulaşım ve Randevu Planlaması";
