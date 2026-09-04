@@ -3,12 +3,12 @@
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 
-export const metaTitle = "İstanbul Psikolog ve Terapi Hizmetleri | Psk. Mert Koçak";
+export const metaTitle = "İstanbul Psikolog ve Terapi Hizmetleri";
 export const metaDescription =
-  "İstanbul psikolog ararken uzman seçimi, ücret, ilçe erişimi ve seans saati nasıl planlanır? Etiler'deki klinikten yol haritası. Psk. Mert Koçak.";
+  "İstanbul'da psikolog arayışı, uzman seçimi, 2026 ücretleri, ilçe erişimi ve seans planlaması gibi tüm sorularınızın detaylı yanıtları, güncel İstanbul psikolog rehberimizde!";
 
 export const heroEyebrow = "Rehber";
-export const heroTitle = "İstanbul Psikolog: Terapi Süreci, Ücretler ve Uzman Seçimi";
+export const heroTitle = "İstanbul Psikolog: Terapi Süreci, 2026 Güncel Ücretler Rehberi";
 export const breadcrumbLabel = "İstanbul Psikolog";
 
 export interface FaqItem {

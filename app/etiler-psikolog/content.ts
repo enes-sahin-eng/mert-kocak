@@ -3,7 +3,7 @@
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 
-export const metaTitle = "Etiler Psikolog ve Terapi Merkezi | Klinik Psk. Mert Koçak";
+export const metaTitle = "Etiler Psikolog ve Terapi Merkezi";
 export const metaDescription =
   "Etiler psikolog kliniği Nisbetiye Caddesi hattında. Metroyla ulaşım, seans saatleri, ücret aralığı ve çalışılan konular. Klinik Psk. Mert Koçak.";
 

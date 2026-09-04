@@ -3,9 +3,9 @@
 // Kaynakça ve altındaki bölümler (yazar hakkında, sorumluluk reddi)
 // kullanıcı isteğiyle dahil edilmedi.
 
-export const metaTitle = "Psikolog Nedir, Ne İş Yapar? | Klinik Psk. Mert Koçak";
+export const metaTitle = "Psikolog Nedir, Ne İş Yapar ve Ne Zaman Gidilir?";
 export const metaDescription =
-  "Psikolog kimdir, ne iş yapar, ne zaman gidilir ve nasıl seçilir? Terapi düşünenler için sade bir rehber. Klinik Psikolog Mert Koçak.";
+  "Psikolog tam olarak ne yapar? Hangi sorunlarda yardımcı olur? Depresyon, anksiyete, stres, ilişki sorunlarında profesyonel psikolojik destek alın. Türkiye'de online ve yüz yüze terapi hizmetleri.";
 
 export const heroEyebrow = "Rehber";
 export const heroTitle = "Psikolog Nedir, Ne İş Yapar ve Ne Zaman Gidilir?";
@@ -61,7 +61,7 @@ export const faq: PsikologFaqItem[] = [
 export const articleHtml = `
 <p class="lead"><strong>Psikolog, insan davranışını, düşünceyi ve duyguyu bilimsel yöntemlerle inceleyen ve psikoloji lisans eğitimini tamamlamış ruh sağlığı uzmanıdır. Terapi yetkinliği için lisansüstü klinik eğitim gerekir. Psikolog ilaç yazmaz; konuşmaya dayalı psikoterapi yürütür ve gerektiğinde psikiyatriste yönlendirir.</strong></p>
 
-<p>Bu rehberi, danışma odasında en sık duyduğum sorular üzerine kurdum: "Psikolog tam olarak ne yapıyor?", "Benim durumum yeterince ciddi mi?", "Nasıl doğru kişiyi bulacağım?" Aşağıda bunların hepsine sırayla, süsleme yapmadan cevap vereceğim.</p>
+<p>Bu kapsamlı rehber, psikologlar hakkında en çok merak edilen soruları yanıtlamak üzere hazırlandı: "Psikolog tam olarak ne yapıyor?", "Benim durumum yeterince ciddi mi?", "Nasıl doğru kişiyi bulacağım?" Aşağıda, tüm bu sorulara yalın ve anlaşılır yanıtlar sunulacaktır.</p>
 
 <h2>Psikolog kimdir ve ne iş yapar?</h2>
 
@@ -78,9 +78,9 @@ export const articleHtml = `
 
 <p>Psikoloğun yapmadığı şeyler de en az yaptıkları kadar önemlidir: hayatınızla ilgili kararları sizin yerinize vermez, "şunu yapmalısınız" diye reçete sunmaz ve iyileşme garantisi vermez. Terapi, birlikte yürünen bir süreçtir.</p>
 
-<h2>Unvanlar ve yetki sınırları: kim ne yapabilir?</h2>
+<h2>Psikolog, Psikiyatrist, Klinik Psikolog: Yetkileri ve Farkları</h2>
 
-<p>Türkiye'de en çok karışan konu bu. Aşağıdaki tablo yetki ve rol sınırlarını özetliyor.</p>
+<p>Türkiye'de sıklıkla merak edilen ve karıştırılan unvanlar bulunmaktadır. Aşağıdaki tablo, psikolog, psikiyatrist ve klinik psikolog gibi uzmanların yetki ve rol farklarını net bir şekilde özetlemektedir.</p>
 
 <table>
   <caption>Ruh sağlığı alanındaki roller ve yetkileri</caption>
@@ -158,26 +158,26 @@ export const articleHtml = `
 
 <h2>Psikolog ücretleri neye göre değişir?</h2>
 
-<p>Seans ücreti tek bir rakamla ifade edilemez; birden fazla değişkene bağlıdır. 2026 yılında İstanbul'da bireysel seans ücretleri genel olarak yaklaşık <strong>3.000-8.000 TL</strong> aralığında değişkenlik göstermektedir. Bu aralık bir piyasa gözlemidir, doğrulanmış bir istatistik değildir; çift ve aile seansları süre farkı nedeniyle genellikle daha yüksek konumlanır.</p>
+<p>Seans ücreti tek bir rakamla ifade edilemez; birden fazla değişkene bağlıdır. Türkiye'de 2026 yılı itibarıyla psikolog seans ücretleri genel olarak <strong>3.000 ₺ ile 8.000 ₺</strong> aralığında değişkenlik göstermektedir. Belirtilen bu aralık, güncel piyasa gözlemleri ve sektör verileri doğrultusunda oluşmaktadır; çift ve aile seansları süre farkı nedeniyle genellikle daha yüksek konumlanır.</p>
 
-<p>Ücreti belirleyen başlıca faktörler:</p>
+<p>Psikolog Seans Ücretini belirleyen başlıca faktörler:</p>
 
 <ul>
-  <li><strong>Terapistin deneyimi ve aldığı ek eğitimler</strong> — EMDR, şema terapi gibi sertifikalı eğitimler maliyetlidir ve ücrete yansır.</li>
-  <li><strong>Seans süresi</strong> — 50 dakikalık bireysel seans ile 80-90 dakikalık çift seansı aynı fiyatlanmaz.</li>
-  <li><strong>Çalışılan ekol</strong> — bazı yaklaşımlar seans dışı hazırlık ve raporlama gerektirir.</li>
-  <li><strong>Online veya yüz yüze</strong> — online seanslar bazı uygulamalarda daha erişilebilir konumlanır.</li>
-  <li><strong>Kurum tipi ve konum</strong> — merkezi ilçelerdeki kliniklerde işletme maliyeti daha yüksektir.</li>
-  <li><strong>Seans sıklığı</strong> — haftada bir yerine iki haftada bir görüşme toplam maliyeti değiştirir.</li>
+  <li><strong>Terapistin deneyimi ve aldığı ek eğitimler:</strong> EMDR, şema terapi gibi sertifikalı eğitimler maliyetlidir ve ücrete yansır.</li>
+  <li><strong>Seans süresi:</strong> 50 dakikalık bireysel seans ile 80-90 dakikalık çift seansı aynı fiyatlanmaz.</li>
+  <li><strong>Çalışılan ekol:</strong> Bazı yaklaşımlar seans dışı hazırlık ve raporlama gerektirir.</li>
+  <li><strong>Online veya yüz yüze:</strong> Online seanslar bazı uygulamalarda daha erişilebilir konumlanır.</li>
+  <li><strong>Kurum tipi ve konum:</strong> Merkezi ilçelerdeki kliniklerde işletme maliyeti daha yüksektir.</li>
+  <li><strong>Seans sıklığı:</strong> Haftada bir yerine iki haftada bir görüşme toplam maliyeti değiştirir.</li>
 </ul>
 
-<p>Bütçe bir engel oluşturuyorsa üniversitelerin psikoloji bölümlerine bağlı uygulama merkezleri, belediyelerin ücretsiz danışmanlık birimleri ve devlet hastanelerinin psikiyatri poliklinikleri erişilebilir seçeneklerdir. Ayrıca birçok uzman gibi ben de <strong>ücretsiz ön görüşme</strong> sunuyorum; bu görüşme, ücretli bir sürece girmeden önce uyum olup olmadığını anlamanızı sağlar.</p>
+<p>Bütçe kısıtları söz konusu olduğunda, psikolojik desteğe erişim için farklı alternatifler de mevcuttur. Üniversitelerin psikoloji bölümlerine bağlı uygulama merkezleri, belediyelerin sunduğu danışmanlık birimleri ve devlet hastanelerinin psikiyatri poliklinikleri, daha erişilebilir seçenekler sunabilmektedir. Ayrıca, birçok uzman psikolog tarafından süreç öncesinde <strong>ücretsiz ön görüşme</strong> imkanları sunulabilmektedir. Bu görüşmeler, karşılıklı uyumu değerlendirmek ve terapi sürecine başlamadan önce bilgi edinmek için önemli bir fırsattır.</p>
 
 <h2>Online psikolog mu, yüz yüze mi?</h2>
 
 <p>İkisi arasında bir hiyerarşi yok; soru hangisinin size uyduğu. Yüz yüze görüşme, beden dilinin bütününü ve ortak fiziksel alanın verdiği güveni sunar. Online görüşme ise ulaşım süresini ortadan kaldırır ve düzenliliği kolaylaştırır — İstanbul gibi bir şehirde bu küçük bir avantaj değildir.</p>
 
-<p>Beşiktaş, Etiler, Levent, Nişantaşı ve Şişli gibi kliniğe yakın bölgelerde yüz yüze seans imkânı sunuluyor; Kadıköy, Ataşehir, Bakırköy gibi ulaşımın uzun sürdüğü ilçelerden gelen danışanlar ile yurt dışında yaşayan Türkçe konuşan danışanlar için online seans seçeneği de mevcut. İlçe bazlı erişim ayrıntılarını <a href="/istanbul-psikolog">İstanbul psikolog rehberi</a> sayfasında bulabilirsiniz.</p>
+<p>Beşiktaş, Etiler, Levent, Nişantaşı ve Şişli gibi kliniğe yakın bölgelerde yüz yüze seans imkânı sunuluyor; Kadıköy, Ataşehir, Bakırköy gibi ulaşımın uzun sürdüğü ilçelerden gelen danışanlar ile yurt dışında yaşayan danışanlar için online seans seçeneği de mevcut. İlçe bazlı erişim ayrıntılarını <a href="/istanbul-psikolog">İstanbul psikolog rehberi</a> sayfasında bulabilirsiniz.</p>
 
 <h2>Hangi konuda destek arıyorsunuz?</h2>
 
@@ -224,5 +224,5 @@ export const articleHtml = `
 
 <h2>Nasıl başlanır?</h2>
 
-<p>Terapiye başlamak için hazır hissetmeniz gerekmiyor; başlamak zaten hazır hissetmenin yoluna girmenin bir parçası. Yetişkin ve ergen danışanlarla yürüttüğüm <a href="/bireysel-terapi">bireysel terapi</a> sürecinde bilişsel davranışçı terapi ve EMDR ile çalışıyorum. Ücretsiz ön görüşme için <a href="/#contact">iletişim</a> bölümünden bana ulaşabilirsiniz.</p>
+<p>Türkiye'de psikolojik destek arayışında olanlar için terapiye başlamak, tam anlamıyla hazır hissetmekten ziyade, iyileşme yolculuğuna adım atmanın kendisidir. Uzman bir psikologdan destek alma sürecini kolaylaştırmak adına, yetişkin ve ergen danışanlarla yürüttüğüm <a href="/bireysel-terapi">bireysel terapi</a> çalışmalarımda bilişsel davranışçı terapi (BDT) ve EMDR terapisi gibi kanıta dayalı, bilimsel temelli yaklaşımları etkin bir şekilde uygulamaktayız. Online veya yüz yüze terapi seçenekleri ile ulaşılabilir destek sunarken, sürece başlamadan önce karşılıklı uyumu değerlendirebileceğiniz ücretsiz ön görüşme imkanı için <a href="/#contact">iletişim</a> bölümünden bana ulaşabilirsiniz. Böylece, doğru psikolog seçimi yaparak kendinize en uygun yolu belirleyebilirsiniz.</p>
 `;
