@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import { getPost } from "@/lib/blog";
 import { getSettings } from "@/lib/settings";
-import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, defaultOgImage, jsonLdScript, SITE_NAME } from "@/lib/seo";
 import BlogDetailClient from "@/components/blog/BlogDetailClient";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   const { seo } = post;
   const url = seo.canonicalUrl ?? absoluteUrl(`/blog/${post.slug}`);
-  const images = seo.ogImage ? [{ url: seo.ogImage }] : undefined;
+  const images = [seo.ogImage ? { url: seo.ogImage } : defaultOgImage()];
 
   return {
     title: seo.metaTitle,
@@ -53,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: seo.metaTitle,
       description: seo.metaDescription ?? undefined,
-      images: seo.ogImage ? [seo.ogImage] : undefined,
+      images: seo.ogImage ? [seo.ogImage] : [defaultOgImage().url],
     },
   };
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getCategories, getFeaturedPosts, getPosts } from "@/lib/blog";
 import { getSettings } from "@/lib/settings";
-import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, defaultOgImage, jsonLdScript, SITE_NAME } from "@/lib/seo";
 import BlogListClient from "@/components/blog/BlogListClient";
 
 export const dynamic = "force-dynamic";
@@ -26,8 +26,14 @@ export async function generateMetadata({
       title: `${title} | ${SITE_NAME}`,
       description,
       url: absoluteUrl(path),
+      images: [defaultOgImage()],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [defaultOgImage().url],
+    },
   };
 }
 

@@ -112,6 +112,16 @@ export function absoluteUrl(path = ""): string {
   return `${SITE_URL}${path.startsWith("/") ? "" : "/"}${path}`;
 }
 
+/**
+ * app/opengraph-image.tsx'in ürettiği varsayılan paylaşım görseli. Next.js
+ * bu dosyayı yalnızca sayfa kendi `openGraph` metadata objesini tanımlamadığı
+ * durumda otomatik miras bırakır; kendi `openGraph` objesini tanımlayan
+ * sayfalarda (ör. /psikolog, blog) `images` alanına elle eklenmesi gerekir.
+ */
+export function defaultOgImage() {
+  return { url: absoluteUrl("/opengraph-image"), width: 1200, height: 630 };
+}
+
 /** JSON-LD nesnesini güvenli biçimde <script> içeriği olarak hazırlar. */
 export function jsonLdScript(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");

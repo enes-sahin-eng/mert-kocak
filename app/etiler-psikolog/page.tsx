@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import TherapyFaq from "@/components/therapy/TherapyFaq";
 import { getSettings } from "@/lib/settings";
-import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, defaultOgImage, jsonLdScript, SITE_NAME } from "@/lib/seo";
 import { getSeoPageContent, type SeoPageContent } from "@/lib/seoPage";
 import {
   articleHtml,
@@ -51,11 +51,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: absoluteUrl(`/${PAGE_SLUG}`),
       siteName: SITE_NAME,
       locale: "tr_TR",
+      images: [defaultOgImage()],
     },
     twitter: {
       card: "summary_large_image",
       title: content.heroTitle,
       description: content.metaDescription,
+      images: [defaultOgImage().url],
     },
   };
 }
