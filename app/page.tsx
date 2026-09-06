@@ -13,6 +13,7 @@ import {
   absoluteUrl,
   jsonLdScript,
   SITE_NAME,
+  SITE_TAGLINE,
   BUSINESS_ADDRESS,
   BUSINESS_GEO,
   BUSINESS_PRICE_RANGE,
@@ -32,6 +33,11 @@ function buildHomeJsonLd(settings: SiteSettings) {
         "@id": absoluteUrl("/#website"),
         url: absoluteUrl("/"),
         name: SITE_NAME,
+        // Google, arama sonuçlarında gösterdiği "site adı"nı bu alanlardan
+        // seçiyor; alternateName ikinci bir aday sunar. publisher ise siteyi
+        // işletme varlığına bağlar (aksi halde WebSite tek başına durur).
+        alternateName: `${SITE_TAGLINE} ${SITE_NAME}`,
+        publisher: { "@id": absoluteUrl("/#business") },
         inLanguage: "tr-TR",
       },
       {
@@ -51,6 +57,13 @@ function buildHomeJsonLd(settings: SiteSettings) {
         name: `${settings.author.name} — ${settings.author.title}`,
         url: absoluteUrl("/"),
         image,
+        logo: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/logo.png"),
+          width: 1024,
+          height: 1024,
+        },
+        description: settings.author.bio ?? undefined,
         telephone: settings.phoneLink || settings.phone || undefined,
         email: settings.email || undefined,
         priceRange: BUSINESS_PRICE_RANGE,

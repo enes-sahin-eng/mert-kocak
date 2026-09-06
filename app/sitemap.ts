@@ -23,20 +23,34 @@ const therapyPages = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, categories] = await Promise.all([getAllPosts(), getCategories()]);
 
-  const now = new Date();
+  // Yazıların en yenisinin tarihi: blog listesinin gerçekten değiştiği an.
+  const postTimes = posts
+    .map((p) => p.updatedAt ?? p.publishedAt)
+    .filter((d): d is string => Boolean(d))
+    .map((d) => new Date(d).getTime())
+    .filter((t) => !Number.isNaN(t));
+  const latestPostDate = postTimes.length ? new Date(Math.max(...postTimes)) : undefined;
 
+  // ÖNEMLİ: lastModified yalnızca gerçekten bilinen yerlerde veriliyor.
+  // Her istekte new Date() basmak (eski davranış) sayfa değişmese bile
+  // "az önce güncellendi" demek olur; Google bunu fark edince lastmod
+  // sinyaline güvenmeyi bırakır. Bilmediğimiz yerde alan hiç yazılmıyor.
   const staticPages: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/"), lastModified: now, changeFrequency: "monthly", priority: 1 },
-    { url: absoluteUrl("/blog"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
-    // GEÇİCİ: blog CMS'i ile uyumlu olmadığı için elle eklenen bağımsız sayfalar.
-    { url: absoluteUrl("/psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: absoluteUrl("/istanbul-psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: absoluteUrl("/etiler-psikolog"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/"), changeFrequency: "monthly", priority: 1 },
+    {
+      url: absoluteUrl("/blog"),
+      lastModified: latestPostDate,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    // Blog CMS'i ile uyumlu olmadığı için elle eklenen bağımsız sayfalar.
+    { url: absoluteUrl("/psikolog"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/istanbul-psikolog"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/etiler-psikolog"), changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const therapyDetailPages: MetadataRoute.Sitemap = therapyPages.map((content) => ({
     url: absoluteUrl(`/${content.slug}`),
-    lastModified: now,
     changeFrequency: "monthly",
     priority: 0.9,
   }));
@@ -45,14 +59,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((c) => (c.postsCount ?? 0) > 0)
     .map((c) => ({
       url: absoluteUrl(`/blog?kategori=${c.slug}`),
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.5,
     }));
 
   const postPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: absoluteUrl(`/blog/${post.slug}`),
-    lastModified: post.updatedAt ?? post.publishedAt ?? now,
+    lastModified: post.updatedAt ?? post.publishedAt ?? undefined,
     changeFrequency: "weekly",
     priority: 0.7,
   }));
