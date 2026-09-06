@@ -1,6 +1,56 @@
 import { getSettings } from "@/lib/settings";
 import { getTherapies } from "@/lib/therapies";
 import { getPosts } from "@/lib/blog";
+import { getSeoPageContent, type SeoPageContent } from "@/lib/seoPage";
+import * as psikolog from "@/app/psikolog/content";
+import * as istanbulPsikolog from "@/app/istanbul-psikolog/content";
+import * as etilerPsikolog from "@/app/etiler-psikolog/content";
+
+// /psikolog, /istanbul-psikolog, /etiler-psikolog: blog CMS'i ile uyumsuz
+// oldukları için ayrı, bağımsız SEO sayfaları (bkz. ilgili content.ts).
+// Panelde "SEO Sayfaları"nda kayıt varsa o içerik, yoksa buradaki fallback
+// kullanılır — page.tsx'lerdeki mantıkla birebir aynı.
+const SEO_PAGES: { slug: string; fallback: SeoPageContent }[] = [
+  {
+    slug: "psikolog",
+    fallback: {
+      slug: "psikolog",
+      metaTitle: psikolog.metaTitle,
+      metaDescription: psikolog.metaDescription,
+      heroEyebrow: psikolog.heroEyebrow,
+      heroTitle: psikolog.heroTitle,
+      breadcrumbLabel: "Psikolog",
+      articleHtml: psikolog.articleHtml,
+      faq: psikolog.faq,
+    },
+  },
+  {
+    slug: "istanbul-psikolog",
+    fallback: {
+      slug: "istanbul-psikolog",
+      metaTitle: istanbulPsikolog.metaTitle,
+      metaDescription: istanbulPsikolog.metaDescription,
+      heroEyebrow: istanbulPsikolog.heroEyebrow,
+      heroTitle: istanbulPsikolog.heroTitle,
+      breadcrumbLabel: istanbulPsikolog.breadcrumbLabel,
+      articleHtml: istanbulPsikolog.articleHtml,
+      faq: istanbulPsikolog.faq,
+    },
+  },
+  {
+    slug: "etiler-psikolog",
+    fallback: {
+      slug: "etiler-psikolog",
+      metaTitle: etilerPsikolog.metaTitle,
+      metaDescription: etilerPsikolog.metaDescription,
+      heroEyebrow: etilerPsikolog.heroEyebrow,
+      heroTitle: etilerPsikolog.heroTitle,
+      breadcrumbLabel: etilerPsikolog.breadcrumbLabel,
+      articleHtml: etilerPsikolog.articleHtml,
+      faq: etilerPsikolog.faq,
+    },
+  },
+];
 
 // CMS'ten taze üretilir; CDN/tarayıcı için 1 saat önbelleklenir.
 export const dynamic = "force-dynamic";
@@ -17,10 +67,11 @@ function siteUrl(request: Request): string {
  * Bkz. https://llmstxt.org
  */
 export async function GET(request: Request): Promise<Response> {
-  const [settings, therapies, { posts }] = await Promise.all([
+  const [settings, therapies, { posts }, seoPages] = await Promise.all([
     getSettings(),
     getTherapies(),
     getPosts({ page: 1 }),
+    Promise.all(SEO_PAGES.map((p) => getSeoPageContent(p.slug, p.fallback))),
   ]);
 
   const base = siteUrl(request);
@@ -42,17 +93,23 @@ export async function GET(request: Request): Promise<Response> {
     lines.push("");
   }
 
-  // Hizmetler
+  // Hizmetler — varsa kendi detay sayfasına, yoksa ana sayfadaki bölüme bağlanır.
   if (therapies.length) {
     lines.push("## Hizmetler");
     for (const therapy of therapies) {
       const desc = therapy.subtitle ?? therapy.description ?? "";
-      lines.push(
-        `- [${therapy.title}](${base}/#therapies)${desc ? `: ${desc}` : ""}`,
-      );
+      const url = therapy.link ? `${base}${therapy.link}` : `${base}/#therapies`;
+      lines.push(`- [${therapy.title}](${url})${desc ? `: ${desc}` : ""}`);
     }
     lines.push("");
   }
+
+  // Rehber sayfaları (psikolog, istanbul-psikolog, etiler-psikolog)
+  lines.push("## Rehberler");
+  for (const page of seoPages) {
+    lines.push(`- [${page.heroTitle}](${base}/${page.slug}): ${page.metaDescription}`);
+  }
+  lines.push("");
 
   // Bölümler
   lines.push("## Bölümler");
