@@ -9,13 +9,20 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: Promise<{ kategori?: string }>;
+  searchParams: Promise<{ kategori?: string; page?: string }>;
 }): Promise<Metadata> {
-  const { kategori } = await searchParams;
-  const title = kategori ? `${kategori} Yazıları` : "Blog";
+  const { kategori, page } = await searchParams;
+  const currentPage = Math.max(1, Number(page) || 1);
+  const baseTitle = kategori ? `${kategori} Yazıları` : "Blog";
+  // Sayfalamada her sayfa KENDİNE canonical verir ve başlığı farklıdır;
+  // aksi halde 2., 3. sayfalar 1. sayfanın kopyası gibi görünür.
+  const title = currentPage > 1 ? `${baseTitle} — Sayfa ${currentPage}` : baseTitle;
   const description =
     "Psikoloji, terapi ve kişisel gelişim hakkında bilgilendirici içerikler. Zihinsel sağlık üzerine güncel yazılar.";
-  const path = kategori ? `/blog?kategori=${kategori}` : "/blog";
+  const query = new URLSearchParams();
+  if (kategori) query.set("kategori", kategori);
+  if (currentPage > 1) query.set("page", String(currentPage));
+  const path = query.toString() ? `/blog?${query.toString()}` : "/blog";
 
   return {
     title,
