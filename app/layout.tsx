@@ -48,7 +48,14 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      // Arama sonucunda büyük görsel ve uzunluk sınırı olmayan açıklama
+      // gösterilmesine izin verir; varsayılan davranış daha kısıtlıdır.
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

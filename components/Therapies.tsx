@@ -70,10 +70,15 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute inset-0"
             >
+              {/* Dekoratif tam ekran arka plan: üstünde gradient + noise
+                  katmanları var ve terapinin adı zaten aşağıda <h2> olarak
+                  gerçek metin hâlinde basılıyor. Bu yüzden alt="" doğrusu —
+                  ekran okuyucu tekrar okumaz. (Görsel CMS'ten geldiği için
+                  içeriğini tarif eden bir metin de yazılamaz.) */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={therapy.image ?? `/therapy-${(index % 6) + 1}.jpg`}
-                alt={`${therapy.title} - Etiler, İstanbul Psikolog`}
+                alt=""
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Gradient overlays */}
