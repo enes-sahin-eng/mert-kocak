@@ -6,14 +6,16 @@ import FloatingActions from "@/components/FloatingActions";
 import { getSettings } from "@/lib/settings";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/seo";
 
+// latin-ext: ş ğ ı ç ö ü gibi Türkçe karakterlerin fallback fonta düşmeden
+// doğru glif ile render olması için gerekli.
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
 });
 
