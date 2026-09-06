@@ -9,7 +9,15 @@ import { getSettings, type SiteSettings } from "@/lib/settings";
 import { getTherapies } from "@/lib/therapies";
 import { getTestimonials } from "@/lib/testimonials";
 import { getVideos } from "@/lib/videos";
-import { absoluteUrl, jsonLdScript, SITE_NAME } from "@/lib/seo";
+import {
+  absoluteUrl,
+  jsonLdScript,
+  SITE_NAME,
+  BUSINESS_ADDRESS,
+  BUSINESS_GEO,
+  BUSINESS_PRICE_RANGE,
+  buildOpeningHours,
+} from "@/lib/seo";
 
 function buildHomeJsonLd(settings: SiteSettings) {
   // sameAs: linkedin yerine youtube kullanılıyor (bkz. lib/settings.ts).
@@ -45,10 +53,11 @@ function buildHomeJsonLd(settings: SiteSettings) {
         image,
         telephone: settings.phoneLink || settings.phone || undefined,
         email: settings.email || undefined,
-        address: settings.address
-          ? { "@type": "PostalAddress", addressLocality: settings.address, addressCountry: "TR" }
-          : undefined,
-        areaServed: settings.address || "İstanbul",
+        priceRange: BUSINESS_PRICE_RANGE,
+        address: { "@type": "PostalAddress", ...BUSINESS_ADDRESS },
+        geo: { "@type": "GeoCoordinates", ...BUSINESS_GEO },
+        openingHoursSpecification: buildOpeningHours(settings.contact.workingHours),
+        areaServed: "İstanbul",
         sameAs,
         founder: { "@id": absoluteUrl("/#person") },
       },
