@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { z } from "zod";
@@ -127,8 +128,13 @@ export default function BlogListClient({
                 <motion.article key={post.slug} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
                   <Link href={`/blog/${post.slug}`} className="group block">
                     <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={cover(post, index)} alt={post.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <Image
+                        src={cover(post, index)}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
                       <div className="absolute bottom-6 left-6 right-6">
                         {post.category && (
@@ -176,8 +182,13 @@ export default function BlogListClient({
                 <motion.article key={post.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
                   <Link href={`/blog/${post.slug}`} className="group block">
                     <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-5">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={cover(post, index)} alt={post.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <Image
+                        src={cover(post, index)}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
                     </div>
                     <div className="flex items-center gap-3 mb-3">

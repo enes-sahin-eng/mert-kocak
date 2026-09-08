@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { z } from "zod";
 import type { SiteSettings } from "@/lib/settings";
@@ -647,11 +648,12 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
             <span className="text-[#94a3b8] text-sm font-light group-hover:text-white transition-colors">
               Design & Development By
             </span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/designer-logo-full.png" 
-              alt="ideaZone DIGITAL" 
-              className="h-5 md:h-6 w-auto object-contain" 
+            <Image
+              src="/designer-logo-full.png"
+              alt="ideaZone DIGITAL"
+              width={428}
+              height={112}
+              className="h-5 md:h-6 w-auto object-contain"
             />
           </a>
         </div>

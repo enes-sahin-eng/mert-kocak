@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import Image from "next/image";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { z } from "zod";
@@ -205,9 +206,14 @@ function AuthorNewsletterSection({ author }: { author: Post["author"] }) {
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#f5f3ef] rounded-3xl p-8">
             <div className="flex items-center gap-5 mb-6">
-              <div className="w-20 h-20 rounded-full overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={author.image ?? "/mert-kocak.jpg"} alt={author.name} className="object-cover w-full h-full" />
+              <div className="w-20 h-20 rounded-full overflow-hidden relative">
+                <Image
+                  src={author.image ?? "/mert-kocak.jpg"}
+                  alt={author.name}
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
               </div>
               <div>
                 <p className="text-primary/60 text-xs tracking-widest uppercase mb-1">Yazar</p>
@@ -344,8 +350,15 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
       {/* Hero */}
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <motion.div initial={{ scale: 1.1 }} animate={{ scale: imageLoaded ? 1 : 1.1 }} transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }} className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={cover(post)} alt={post.title} className="absolute inset-0 w-full h-full object-cover" onLoad={() => setImageLoaded(true)} />
+          <Image
+            src={cover(post)}
+            alt={post.title}
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+            onLoad={() => setImageLoaded(true)}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </motion.div>
 
@@ -364,9 +377,14 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
               </motion.h1>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.author.image ?? "/mert-kocak.jpg"} alt={post.author.name} className="object-cover w-full h-full" />
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 relative">
+                  <Image
+                    src={post.author.image ?? "/mert-kocak.jpg"}
+                    alt={post.author.name}
+                    fill
+                    sizes="48px"
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <p className="text-white font-medium">{post.author.name}</p>
@@ -459,8 +477,13 @@ export default function BlogDetailClient({ post, settings }: { post: Post; setti
                 <motion.article key={rel.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
                   <Link href={`/blog/${rel.slug}`} className="group block">
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={cover(rel, index)} alt={rel.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <Image
+                        src={cover(rel, index)}
+                        alt={rel.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     {rel.category && <span className="text-accent text-xs font-medium">{rel.category}</span>}

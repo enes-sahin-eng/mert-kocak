@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import type { Therapy } from "@/lib/therapies";
@@ -75,11 +76,16 @@ export default function Therapies({ therapies }: { therapies: Therapy[] }) {
                   gerçek metin hâlinde basılıyor. Bu yüzden alt="" doğrusu —
                   ekran okuyucu tekrar okumaz. (Görsel CMS'ten geldiği için
                   içeriğini tarif eden bir metin de yazılamaz.) */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={therapy.image ?? `/therapy-${(index % 6) + 1}.jpg`}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="100vw"
+                // Çapraz geçiş (crossfade) tüm görsellerin önceden hazır
+                // olmasını gerektiriyor (opacity ile geçiş yapılıyor);
+                // varsayılan lazy-load geçişi geciktirir.
+                loading="eager"
+                className="object-cover"
               />
               {/* Gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#f5f3ef] via-transparent to-[#f5f3ef]/30" />

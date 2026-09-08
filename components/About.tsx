@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import type { SiteSettings } from "@/lib/settings";
 
@@ -127,11 +128,12 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
             {/* Main image */}
             <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden shadow-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={photoSrc}
                 alt="Klinik Psikolog Mert Koçak - Etiler, İstanbul"
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+                className="object-cover"
               />
               {/* Subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
