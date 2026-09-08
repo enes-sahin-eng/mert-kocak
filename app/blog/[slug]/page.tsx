@@ -88,11 +88,9 @@ export default async function BlogDetailPage({
       name: post.author.name,
       jobTitle: post.author.title,
     },
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: absoluteUrl("/"),
-    },
+    // Sitenin geri kalanındaki @graph deseniyle tutarlı: düz bir Organization
+    // objesi yerine kökteki LocalBusiness varlığına @id ile bağlanıyor.
+    publisher: { "@id": absoluteUrl("/#business") },
   };
 
   const breadcrumbLd = {

@@ -35,6 +35,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     remotePatterns: apiImagePattern(),
+    // Varsayılan yalnızca webp'dir; avif de eklenirse next/image tarayıcı
+    // desteğine göre daha küçük dosyayı seçer (rehber 5.2).
+    formats: ["image/avif", "image/webp"],
     // Next 16 güvenlik gereği özel/yerel IP'lerden görsel optimize etmez
     // (SSRF koruması). Yalnızca geliştirmede backend localhost'ta çalıştığı
     // için açılır; canlıda (genel IP) kapalı kalır.
