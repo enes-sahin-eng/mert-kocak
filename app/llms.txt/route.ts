@@ -5,8 +5,9 @@ import { getSeoPageContent, type SeoPageContent } from "@/lib/seoPage";
 import * as psikolog from "@/app/psikolog/content";
 import * as istanbulPsikolog from "@/app/istanbul-psikolog/content";
 import * as etilerPsikolog from "@/app/etiler-psikolog/content";
+import * as onlineTerapi from "@/app/online-terapi/content";
 
-// /psikolog, /istanbul-psikolog, /etiler-psikolog: blog CMS'i ile uyumsuz
+// /psikolog, /istanbul-psikolog, /etiler-psikolog, /online-terapi: blog CMS'i ile uyumsuz
 // oldukları için ayrı, bağımsız SEO sayfaları (bkz. ilgili content.ts).
 // Panelde "SEO Sayfaları"nda kayıt varsa o içerik, yoksa buradaki fallback
 // kullanılır — page.tsx'lerdeki mantıkla birebir aynı.
@@ -48,6 +49,19 @@ const SEO_PAGES: { slug: string; fallback: SeoPageContent }[] = [
       breadcrumbLabel: etilerPsikolog.breadcrumbLabel,
       articleHtml: etilerPsikolog.articleHtml,
       faq: etilerPsikolog.faq,
+    },
+  },
+  {
+    slug: "online-terapi",
+    fallback: {
+      slug: "online-terapi",
+      metaTitle: onlineTerapi.metaTitle,
+      metaDescription: onlineTerapi.metaDescription,
+      heroEyebrow: onlineTerapi.heroEyebrow,
+      heroTitle: onlineTerapi.heroTitle,
+      breadcrumbLabel: onlineTerapi.breadcrumbLabel,
+      articleHtml: onlineTerapi.articleHtml,
+      faq: onlineTerapi.faq,
     },
   },
 ];
