@@ -48,6 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/istanbul-psikolog"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/etiler-psikolog"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/online-terapi"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/istanbul-online-terapi"), changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const therapyDetailPages: MetadataRoute.Sitemap = therapyPages.map((content) => ({

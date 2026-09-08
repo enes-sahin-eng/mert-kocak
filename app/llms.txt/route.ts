@@ -6,8 +6,10 @@ import * as psikolog from "@/app/psikolog/content";
 import * as istanbulPsikolog from "@/app/istanbul-psikolog/content";
 import * as etilerPsikolog from "@/app/etiler-psikolog/content";
 import * as onlineTerapi from "@/app/online-terapi/content";
+import * as istanbulOnlineTerapi from "@/app/istanbul-online-terapi/content";
 
-// /psikolog, /istanbul-psikolog, /etiler-psikolog, /online-terapi: blog CMS'i ile uyumsuz
+// /psikolog, /istanbul-psikolog, /etiler-psikolog, /online-terapi,
+// /istanbul-online-terapi: blog CMS'i ile uyumsuz
 // oldukları için ayrı, bağımsız SEO sayfaları (bkz. ilgili content.ts).
 // Panelde "SEO Sayfaları"nda kayıt varsa o içerik, yoksa buradaki fallback
 // kullanılır — page.tsx'lerdeki mantıkla birebir aynı.
@@ -62,6 +64,19 @@ const SEO_PAGES: { slug: string; fallback: SeoPageContent }[] = [
       breadcrumbLabel: onlineTerapi.breadcrumbLabel,
       articleHtml: onlineTerapi.articleHtml,
       faq: onlineTerapi.faq,
+    },
+  },
+  {
+    slug: "istanbul-online-terapi",
+    fallback: {
+      slug: "istanbul-online-terapi",
+      metaTitle: istanbulOnlineTerapi.metaTitle,
+      metaDescription: istanbulOnlineTerapi.metaDescription,
+      heroEyebrow: istanbulOnlineTerapi.heroEyebrow,
+      heroTitle: istanbulOnlineTerapi.heroTitle,
+      breadcrumbLabel: istanbulOnlineTerapi.breadcrumbLabel,
+      articleHtml: istanbulOnlineTerapi.articleHtml,
+      faq: istanbulOnlineTerapi.faq,
     },
   },
 ];
