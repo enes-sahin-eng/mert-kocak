@@ -46,6 +46,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      // Eski/yanlış adresten gerçek sayfaya kalıcı (301) yönlendirme.
+      {
+        source: "/etiler-psikolog-tavsiye",
+        destination: "/etiler-psikolog",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
